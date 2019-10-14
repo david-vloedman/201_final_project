@@ -21,4 +21,17 @@
 
 # MVPs
 
+- Fill index.html, results.html, about.html with appropriate elements from wireframe
+
+- Create a beer object with all the methods from UML
+
+- Create three unique contructors for Lager, Ale and Dark style beer with properties per UML
+
+- Create an object that handles rendering information to the index.html. Refer to UML for methods.
+
+- Create an object that handles rending information to the results.html
+
+- Create an object that handles creating beer objects. Refer to UML for specific methods and or properties.
+
+
 
