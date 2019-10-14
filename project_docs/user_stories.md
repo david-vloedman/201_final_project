@@ -33,5 +33,6 @@
 
 - Create an object that handles creating beer objects. Refer to UML for specific methods and or properties.
 
+- Create and show a chart of distribution of what's been suggested before
 
 
