@@ -18,3 +18,7 @@
 - As a user I want to be shown a list of suggested beers based on my attribute selections.
 
 - As a user I want to be able to navigate to a page about the application and it's authors.
+
+# MVPs
+
+
