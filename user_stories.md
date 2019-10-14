@@ -33,5 +33,9 @@
 
 - Create an object called User that contains the properties and methods from the UML.
 
+- Create a persistence manager to put and pull data from local storage
+
+
+
 
 
