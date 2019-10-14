@@ -3,7 +3,7 @@
 
 ## Contributors 
 
-- Lindsay Peltier GitHub: github.com/lpeltier0002
+- Lindsay Peltier GitHub: github.com/lindsaypeltier
 - Natalie Alway GitHub: github.com/natalielyn
 - Mason Walker GitHub: github.com/mwalker0909
 - David Vloedman GitHub: github.com/david-vloedman
