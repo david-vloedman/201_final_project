@@ -1,7 +1,7 @@
 # 201_final_project
 201 Final Project. Beer Selector. 
 
-# Contributors 
+## Contributors 
 
 - Lindsay Peltier GitHub: github.com/lpeltier0002
 - Natalie Alway GitHub: github.com/natalielyn
