@@ -24,14 +24,14 @@ User.prototype.isLegal = function(){
 function RenderResults(beer){
   this.list = this.getList();
   this.img = this.getImg();
-}
+};
 
 RenderResults.prototype.getList = function(){
-  let this.list = getElementbyID('beer')
+  this.list = getElementbyID('beer');
 };
 
 RenderResults.prototype.getImg = function(){
-  let this.img = getElementbyID('resultIMG');
+  this.img = getElementbyID('resultIMG');
 };
 
 RenderResults.prototype.renderList = function(){
@@ -74,24 +74,21 @@ var BeerFactory = function(beerType, flavorAle, flavorLager, flavorDark) {
   
 
   BeerFactory.prototype.createBeerList(); {
-   beer.push(new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', flavorAle[0], diabloRojo));
-   beer.push(new Beer(beerBrands[1], 'Sweet As Pacific Pale', flavorAle[1], sweetAs));
-   beer.push(new Beer(beerBrands[3], 'Vicious Mosquito', flavorAle[2], viciousMosq));
-   beer.push(new Beer(beerBrands[5], 'ChingChing Sour', flavorAle[3], chingChingSour));
-   beer.push(new Beer(beerBrands[2], 'Pacific Wonderland', flavorLager[0], pacificWond));
-   beer.push(new Beer(beerBrands[5], 'Bend Black Diamond Lager', flavorLager[1], bendBlackDiamond));
-   beer.push(new Beer(beerBrands[6], 'Pilsner', flavorLager[2], cruxPils));
-   beer.push(new Beer(beerBrands[4], 'Dutch Delight', flavorDark[0], dutchDelight));
-   beer.push(new Beer(beerBrands[2], 'Black Butte Porter', flavorDark[1], blackButte));
+   beer.push(new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo));
+   beer.push(new Beer(beerBrands[1], 'Sweet As Pacific Pale', beerType[0],flavorAle[1], sweetAs));
+   beer.push(new Beer(beerBrands[3], 'Vicious Mosquito', beerType[0], flavorAle[2], viciousMosq));
+   beer.push(new Beer(beerBrands[5], 'ChingChing Sour', beerType[0], flavorAle[3], chingChingSour));
+   beer.push(new Beer(beerBrands[2], 'Pacific Wonderland', beerType[1], flavorLager[0], pacificWond));
+   beer.push(new Beer(beerBrands[5], 'Bend Black Diamond Lager', beerType[1], flavorLager[1], bendBlackDiamond));
+   beer.push(new Beer(beerBrands[6], 'Pilsner', beerType[1], flavorLager[2], cruxPils));
+   beer.push(new Beer(beerBrands[4], 'Dutch Delight', beerType[2], flavorDark[0], dutchDelight));
+   beer.push(new Beer(beerBrands[2], 'Black Butte Porter', beerType[2], flavorDark[1], blackButte));
   }
-}
-
-
 }
 
 //Array of questions. 
 var questionArr = ['What\'s your type?','What\'s your flavor?'];
-};
+
 // ************************************************************************
 //
 // persistenceManager
@@ -156,12 +153,6 @@ ResultsHistory.prototype.fabricateHistory = function(){
   this.historyData = history;
 };
 
-
-
-
-// tests 
-
-
 ResultsHistory.prototype.packageForChart = function(){
   var names = [];
   var package = [];
@@ -174,17 +165,8 @@ ResultsHistory.prototype.packageForChart = function(){
 
 
 
-beers.push(new Beer());
-beers.push(new Beer());
-beers.push(new Beer());
-beers.push(new Beer());
-beers.push(new Beer());
+!function(){
 
-var test = new ResultsHistory();
-
-
-
-var arr = ['this','that'];
-console.log(arr.filter)
+}();
 
 
