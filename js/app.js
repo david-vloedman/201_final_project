@@ -164,9 +164,14 @@ ResultsHistory.prototype.packageForChart = function(){
 };
 
 
-
 !function(){
   var factory = new BeerFactory();
 }();
+
+
+
+var aleWasClicked = function (event) {
+  var aleFlavorSelection()
+}
 
 
