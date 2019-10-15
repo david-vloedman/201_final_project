@@ -19,11 +19,11 @@ function RenderResults(beer){
 }
 
 RenderResults.prototype.getList = function(){
-  return list;
+  let this.list = getElementbyID('beer')
 };
 
 RenderResults.prototype.getImg = function(){
-  return img;
+  let this.img = getElementbyID('resultIMG');
 };
 
 RenderResults.prototype.renderList = function(){
@@ -37,3 +37,4 @@ RenderResults.prototype.renderImg = function(){
   var resultIMG = document.createElement('img');
   resultIMG.innerHTML = beer.img;
 };
+
