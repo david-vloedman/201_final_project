@@ -11,16 +11,16 @@ var Beer = function(brand,name,flav_profile,description) {
 
 //beerFactory, -->2 arrays : all types beers (3) array2 flavors (for all options)
 
-var beerFactory = function(beerType, flavorAle, flavorLager, flavorDark) {
+var BeerFactory = function(beerType, flavorAle, flavorLager, flavorDark) {
   var beerType = [ale, lager, dark];
   var flavorAle = ['Warm and Malty', 'Crisp and Light', 'Hoppy', 'Sour'];
   var flavorLager = ['Crisp and Light', 'Deep and Malty', 'Light and Hoppy'];
   var flavorDark = ['Coffee', 'Chocolate-y'];
+  var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux', 'Worthy'];
+  var beerDescriptions = ['Amber Ale', 'Pale Ale', 'Indian Pale Ale', 'Sour', 'Pale Lager', 'Dark Lager', 'Pilsner', 'Stout', 'Porter'];
+  
 
-  beerFactory.prototype.createBeerList(); {
-    this.beerType = beertype; 
-    this.flavorAle = flavorAle;
-    this.flavorLager = flavorLager;
-    this.flavorDark = flavorDark;
+  BeerFactory.prototype.createBeerList(); {
+   new Beer = 
   }
 }
