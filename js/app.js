@@ -47,7 +47,10 @@ RenderResults.prototype.renderImg = function(){
 };
 
 var test = RenderResults(beer[5]);
-console.log(RenderResults);
+test.getImg;
+// test.getList;
+// test.renderImg;
+// test.renderList;
 
 // ************************************************************************
 //
