@@ -46,6 +46,9 @@ RenderResults.prototype.renderImg = function(){
   resultIMG.innerHTML = beer.img;
 };
 
+var test = RenderResults(beer[5]);
+console.log(RenderResults);
+
 // ************************************************************************
 //
 // Beer and Beers
@@ -173,5 +176,3 @@ ResultsHistory.prototype.packageForChart = function(){
 var aleWasClicked = function (event) {
   var aleFlavorSelection()
 }
-
-
