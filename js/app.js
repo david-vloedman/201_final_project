@@ -91,8 +91,6 @@ var BeerFactory = function() {
   };
 };
 
-//Array of questions.
-var questionArr = ['What\'s your type?','What\'s your flavor?'];
 
 // ************************************************************************
 //
@@ -152,7 +150,6 @@ ResultsHistory.prototype.fabricateHistory = function(){
     history.push(beers[index]);
   });
   this.historyData = history;
-  
 };
 // ************************************************************************
 //  The package for chart function puts the history in data set 
@@ -183,8 +180,6 @@ ResultsHistory.prototype.packageForChart = function(){
 !function(){
   var factory = new BeerFactory();
   factory.createBeerList();
-  
-  
 }();
 
 
