@@ -16,6 +16,11 @@ User.prototype.isLegal = function(){
   return this.age >= this.legalAge;
 };
 
+// ************************************************************************
+//
+// RenderResults
+//
+// ************************************************************************
 
 function RenderResults(beer){
   this.beer = beer;
@@ -72,8 +77,6 @@ var BeerFactory = function() {
   var flavorLager = ['Light and Refreshing', 'Deep and Malty', 'Light and Hoppy'];
   var flavorDark = ['Coffee', 'Chocolate-y'];
   var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux'];
-  var finalFlavors = ['Amber Ale', 'Pale Ale', 'Indian Pale Ale', 'Sour', 'Pale Lager', 'Dark Lager', 'Pilsner', 'Stout', 'Porter'];
-
 
   BeerFactory.prototype.createBeerList = function(){
     new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
@@ -151,7 +154,12 @@ ResultsHistory.prototype.fabricateHistory = function(){
   this.historyData = history;
   
 };
-
+// ************************************************************************
+//  The package for chart function puts the history in data set 
+//  more suitable for Chart.js. It returns a 2-dimensional array.
+//  At each index of the outer array contains the beer name and how many times 
+//  It's been suggested
+// ************************************************************************
 ResultsHistory.prototype.packageForChart = function(){
   var data = [];
   beers.forEach(beer => {
@@ -163,12 +171,6 @@ ResultsHistory.prototype.packageForChart = function(){
       if(beer.name === datum[0]) datum[1]++;
     });
   });
-
-  data.forEach((datum, index, array) => {    
-    
-    if(datum[1] === 0) array.slice(index,1);    
-  });
-
   return data;
 };
 // ************************************************************************
@@ -181,8 +183,8 @@ ResultsHistory.prototype.packageForChart = function(){
 !function(){
   var factory = new BeerFactory();
   factory.createBeerList();
-  var data = new ResultsHistory();
-  console.log(data.packageForChart());
+  
+  
 }();
 
 
