@@ -8,3 +8,4 @@ var Beer = function(brand,name,flav_profile,description) {
   this.description = description;
   beers.push(this);
 }
+
