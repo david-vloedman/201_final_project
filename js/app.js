@@ -176,23 +176,14 @@ ResultsHistory.prototype.packageForChart = function(){
 //
 // ************************************************************************
 
-
 !function(){
   var factory = new BeerFactory();
   factory.createBeerList();
 }();
 
-//index.html 
-
-
-
-
-
-
 var beerTypeSelection = function(event){
-  var beerType = document.getElementById('responses');
-  //var thingWeClickedOn = event.target;
-  //var id = thingWeClickedOn.id;
+  var eventSRC = event.target
+  var id = eventSRC.id;
 
       if (id === 'ale'){
         renderAle();
@@ -206,7 +197,7 @@ var beerTypeSelection = function(event){
     }
 
     function removeChildren(){
-      var reponseElement = document.getElementById('responses');
+      var responseElement = document.getElementById('responses');
       while(responseElement.hasChildNodes()){
         responseElement.removeChild(responseElement.lastChild)
       }
@@ -275,9 +266,9 @@ var beerTypeSelection = function(event){
       darkFlavorType.appendChild(coffee);
       darkFlavorType.appendChild(chocolate);
     }
+  
+
+  };
 
 
-  var showFinalList = function() {
-    var results = document.getElementById('results');
-    var resultsList = document.createElement('ul');
-    results.appendChild(resultsList);
+
