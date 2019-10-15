@@ -202,14 +202,30 @@ var beerTypeSelection = function(event){
     renderAle = function(){
       removeChildren();
       
+      var aleFlavorType = document.getElementById('responses');
+
+      var warm_malty = document.createElement('input');
+      warm_malty.type = 'image';
+      warm_malty.src = 'warmmaltybtn.jpg';
+
+      var crisp_light = document.createElement('input');
+      crisp_light.type = 'image';
+      crisp_light.src = 'crisplightbtn.jpg';
+
+      var hoppy = document.createElement('input');
+      hoppy.type = 'image';
+      hoppy.src = 'hoppybtn.jpg';
+
+      var sour = document.createElement('input');
+      sour.type = 'image';
+      sour.src = 'sourbtn.jpg';
+
+      aleFlavorType.appendChild(warm_malty);
+      aleFlavorType.appendChild(crisp_light);
+      aleFlavorType.appendChild(hoppy);
+      aleFlavorType.appendChild(sour);
     };
 
-      var aleFlavorType = document.getElementById('responses');
-      //render warm and malty
-      //remder crisp and light
-      //render hoppy
-      //render sour
-    }
 
     renderLager = function(){
       //remove child elements of "responses"
