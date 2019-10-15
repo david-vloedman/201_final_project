@@ -22,28 +22,29 @@ User.prototype.isLegal = function(){
 //below - render beer results to results.html
 
 function RenderResults(beer){
+  this.beer = beer;
   this.list = this.getList();
   this.img = this.getImg();
 }
 
 RenderResults.prototype.getList = function(){
-  this.list = Document.getElementbyID('beer');
+  this.list = document.getElementbyID('beer');
 };
 
 RenderResults.prototype.getImg = function(){
-  this.img = getElementbyID('resultIMG');
+  this.img = document.getElementbyID('resultIMG');
 };
 
 RenderResults.prototype.renderList = function(){
   var brandLi = document.createElement('li');
   var nameLi = document.createElement('li');
-  brandLi.innerHTML = beer.brand;
-  nameLi.innerHTML = beer.name;
+  brandLi.innerHTML = this.beer.brand;
+  nameLi.innerHTML = this.beer.name;
 };
 
 RenderResults.prototype.renderImg = function(){
   var resultIMG = document.createElement('img');
-  resultIMG.innerHTML = beer.img;
+  resultIMG.innerHTML = this.beer.img;
 };
 
 // ************************************************************************
@@ -62,7 +63,11 @@ var Beer = function(brand,name, type, flav_profile, description) {
   beers.push(this);
 
 };
-
+// ************************************************************************
+//
+//  Beer factory
+//
+// ************************************************************************
 
 var BeerFactory = function() {
   var beerType = ['ale', 'lager', 'dark'];
@@ -128,12 +133,7 @@ var persistenceManager = {
 
 function ResultsHistory(){
   this.historyData = persistenceManager.getHistoric();
-
-  if(this.historyData === null)
-  {
-
-    this.fabricateHistory();
-  }
+  if(this.historyData === null) this.fabricateHistory();  
 }
 
 ResultsHistory.prototype.addBeer= function(beer){
@@ -162,11 +162,18 @@ ResultsHistory.prototype.packageForChart = function(){
 
 
 };
-
+// ************************************************************************
+//
+//   Entry Point
+//
+// ************************************************************************
 
 
 !function(){
   var factory = new BeerFactory();
+  factory.createBeerList();
+
+  console.log(beers);
 }();
 
 
