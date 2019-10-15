@@ -26,6 +26,11 @@ var Beer = function(brand,name,flav_profile,description) {
   this.flav_profile = flav_profile;
   this.description = description;
   beers.push(this);
+
+}
+
+//Array of questions. 
+var questionArr = ['What\'s your type?','What\'s your flavor?'];
 };
 // ************************************************************************
 //
@@ -92,3 +97,4 @@ SuggestionHistory.prototype.fabricateHistory = function(){
 var test = new SuggestionHistory(null);
 
 console.log(test);
+
