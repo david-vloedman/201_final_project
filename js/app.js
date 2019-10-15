@@ -1,5 +1,9 @@
 'use strict';
-
+// ************************************************************************
+//
+// User
+//
+// ************************************************************************
 function User (name, age){
   this.name = name;
   this.age = age; 
@@ -9,7 +13,11 @@ function User (name, age){
 User.prototype.isLegal = function(){
   return this.age >= this.legalAge;
 };
-
+// ************************************************************************
+//
+// Beer and Beers
+//
+// ************************************************************************
 var beers = [];
 
 var Beer = function(brand,name,flav_profile,description) {
@@ -49,6 +57,11 @@ var persistenceManager = {
     return JSON.parse(localStorage.getItem('history'));
   }
 };
+// ************************************************************************
+//
+// SuggestionHistory
+//
+// ************************************************************************
 
 
 function SuggestionHistory(previous){
