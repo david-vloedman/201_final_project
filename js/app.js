@@ -19,7 +19,11 @@ var Beer = function(brand,name,flav_profile,description) {
   this.description = description;
   beers.push(this);
 };
-
+// ************************************************************************
+//
+// persistenceManager
+//
+// ************************************************************************
 
 var persistenceManager = {
 
@@ -48,21 +52,30 @@ var persistenceManager = {
 
 
 function SuggestionHistory(previous){
-  this.historyData = previous;
-  if(previous === null) this.historyData(this.fabricateHistory());  
+  this.historyData = persistenceManager.getHistoric();
+  if(previous === null) {
+    console.log('no history');
+    this.fabricateHistory();
+  }
 }
 
-SuggestionHistory.prototype.addBeer(beer){
+SuggestionHistory.prototype.addBeer= function(beer){
   this.historyData.push(beer);
-}
+};
 
 SuggestionHistory.prototype.fabricateHistory = function(){
-
+  var randomIndices = [];
+  for(var i = 0; i < 8; i++){
+    randomIndices.push(Math.floor(Math.random() * 10));    
+  }  
+  var history = [];
+  randomIndices.forEach(index => {
+    history.push(beers[index]);
+  });
+  this.historyData = history;
 };
 
 
+var test = new SuggestionHistory(null);
 
-var alltime = new SuggestionHistory();
-
-
-
+console.log(test);
