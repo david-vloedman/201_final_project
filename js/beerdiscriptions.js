@@ -1,3 +1,5 @@
+//GLOBAL BEER BRAND VARIABLES////////////////////////////////////////////
+
 //Ale Beer Descriptions********************************
 //AMBER
 var diabloRojo = 'IBU 30 / ABV 5.5% - This deep amber ale is extremely well balanced and very drinkable. It appeals both to the hop lover and non hop lover. This beer is duel-hopped with Cascade and Delta hops. Cheers to the Red Devil!'
@@ -7,6 +9,8 @@ var sweetAs = 'IBU 18 / ABV 6% - Sweet As! is a bright beer in appearance as wel
 var viciousMosq = 'IBU 70 / ABV 7% - “Vicious” is Sunriver Brewing Company’s flagship West Coast styled India Pale Ale. The heavy handed use of the finest Northwest hops define this pungent, resinous brew. This hop attack is coming at you like the vicious mosquitos at our nearby Cascade Mountains.'
 //SOUR
 var chingChingSour = 'IBU 45 / ABV 4.5% - This beer is effervescent with a SweeTART tanginess. Brewed with pomegranate and hibiscus this yum-yum is a perfect thirst quencher that just might push the boundaries of what you consider beer.'
+
+
 //Lager Beer Descriptions******************************
 //PALE
 var pacificWond = 'IBU 40 / 5.5% - Citrusy Mandarina Bavaria hops combine with the crisp, bright character of a traditional lager'
@@ -14,6 +18,7 @@ var pacificWond = 'IBU 40 / 5.5% - Citrusy Mandarina Bavaria hops combine with t
 var cruxPils = 'IBU 35 / ABV 5.2% - Brewed with traditional Pilsner malts, imported Czech Saaz and local Oregon Sterling hops, this pilsner’s first sip shows up with clean lager flavors, and then opens up with surprising complexity and softness—developing biscuity flavors, spicy herbal notes and a hint of lemon.'
 //DARK
 var bendBlackDiamond = 'IBU - / ABV 5% - Dark amber, has a roasty, smoky aroma. Taste adds some nutty character and done sweetness with a mild bitter bite to close it out'
+
 
 //Dark Beer Descriptions*******************************
 
