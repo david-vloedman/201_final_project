@@ -8,3 +8,6 @@ var Beer = function(brand,name,flav_profile,description) {
   this.description = description;
   beers.push(this);
 }
+
+//Array of questions. 
+var questionArr = ['What\'s your type?','What\'s your flavor?'];
