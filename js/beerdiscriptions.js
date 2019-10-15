@@ -17,12 +17,12 @@ var pacificWond = 'IBU 40 / 5.5% - Citrusy Mandarina Bavaria hops combine with t
 //PILSNER
 var cruxPils = 'IBU 35 / ABV 5.2% - Brewed with traditional Pilsner malts, imported Czech Saaz and local Oregon Sterling hops, this pilsner’s first sip shows up with clean lager flavors, and then opens up with surprising complexity and softness—developing biscuity flavors, spicy herbal notes and a hint of lemon.'
 //DARK
-var bendBlackDiamond = 'IBU - / ABV 5% - Dark amber, has a roasty, smoky aroma. Taste adds some nutty character and done sweetness with a mild bitter bite to close it out'
+var bendBlackDiamond = 'IBU 8 - / ABV 5.3% - Dark amber, has a roasty, smoky aroma. Taste adds some nutty character and done sweetness with a mild bitter bite to close it out'
 
 
 //Dark Beer Descriptions*******************************
 
 //PORTER:
-var blackButteDesc = 'IBU 30 / ABV 5.2% - A rich, creamy mouthfeel complements a layered depth, revealing distinctive chocolate notes. Full of flavor, yet easy to drink.'
+var blackButte = 'IBU 30 / ABV 5.2% - A rich, creamy mouthfeel complements a layered depth, revealing distinctive chocolate notes. Full of flavor, yet easy to drink.'
 //STOUT:
 var dutchDelight = 'IBU 20 / ABV 6.5% - Brewed with locally roasted Stella Espresso from Boxcar coffee, this stout exhibits a melange of chocolate notes along with classic coffee roast'
