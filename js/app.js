@@ -27,11 +27,11 @@ function RenderResults(beer){
 }
 
 RenderResults.prototype.getList = function(){
-  this.list = Document.getElementbyID('beer');
+  this.list = document.getElementbyID('beer');
 };
 
 RenderResults.prototype.getImg = function(){
-  this.img = getElementbyID('resultIMG');
+  this.img = document.getElementbyID('resultIMG');
 };
 
 RenderResults.prototype.renderList = function(){
