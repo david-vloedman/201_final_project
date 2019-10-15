@@ -169,4 +169,62 @@ ResultsHistory.prototype.packageForChart = function(){
   var factory = new BeerFactory();
 }();
 
+//index.html 
 
+
+
+
+
+
+var beerTypeSelection = function(event){
+  var beerType = document.getElementById('responses');
+  //var thingWeClickedOn = event.target;
+  //var id = thingWeClickedOn.id;
+
+      if (id === 'ale'){
+        renderAle();
+      }
+      if (id === 'lager'){
+        renderLager();
+      }
+      if (id === 'dark'){
+        renderDark();
+      }
+    }
+
+    function removeChildren(){
+      var reponseElement = document.getElementById('responses');
+      while(responseElement.hasChildNodes()){
+        responseElement.removeChild(responseElement.lastChild)
+      }
+    }
+
+    renderAle = function(){
+      removeChildren();
+      
+    };
+
+      var aleFlavorType = document.getElementById('responses');
+      //render warm and malty
+      //remder crisp and light
+      //render hoppy
+      //render sour
+    }
+
+    renderLager = function(){
+      //remove child elements of "responses"
+      var lagerFlavorType = document.getElementById('responses');
+      //render ale flavor options and buttons
+    }
+
+    renderDark = function(){
+      //remove child elements of "responses"
+      var darkFlavorType = document.getElementById('responses');
+      //write dark flavor options
+    }
+
+
+  var showFinalList = function() {
+    var results = document.getElementById('results');
+    var resultsList = document.createElement('ul');
+    results.appendChild(resultsList);
