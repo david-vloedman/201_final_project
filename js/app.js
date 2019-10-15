@@ -226,17 +226,41 @@ var beerTypeSelection = function(event){
       aleFlavorType.appendChild(sour);
     };
 
-
     renderLager = function(){
-      //remove child elements of "responses"
+      removeChildren();
       var lagerFlavorType = document.getElementById('responses');
-      //render ale flavor options and buttons
-    }
+      var  light_crisp = document.createElement('input');
+      light_crisp.type = 'image';
+      light_crisp.src = 'lightcrispbtn.jpg';
+
+      var deep_malty = document.createElement('input');
+      deep_malty.type = 'image';
+      deep_malty.src = 'deepmaltybtn.jpg';
+
+      var light_hoppy = document.createElement('input');
+      light_hoppy.type = 'image';
+      light_hoppy.src = 'lighthoppybtn.jpg';
+
+      lagerFlavorType.appendChild(light_crisp);
+      lagerFlavorType.appendChild(deep_malty);
+      lagerFlavorType.appendChild(light_hoppy);
+    };
 
     renderDark = function(){
-      //remove child elements of "responses"
+      removeChildren();
+
       var darkFlavorType = document.getElementById('responses');
-      //write dark flavor options
+      
+      var coffee = document.createElement('input');
+      coffee.type = 'image';
+      coffee.src = 'coffeebtn.jpg';
+
+      var chocolate = document.createElement('input');
+      chocolate.type = 'image';
+      chocolate.src = 'chocolatebtn.jpg';
+
+      darkFlavorType.appendChild(coffee);
+      darkFlavorType.appendChild(chocolate);
     }
 
 
