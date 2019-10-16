@@ -1,5 +1,8 @@
 'use strict';
 
+
+var beers = [];
+
 // ************************************************************************
 //
 // User
@@ -55,7 +58,7 @@ RenderResults.prototype.renderImg = function(){
 // Beer and Beers
 //
 // ************************************************************************
-var beers = [];
+
 
 var Beer = function(brand,name, type, flav_profile, description ,imgPath) {
   this.brand = brand;
@@ -67,6 +70,8 @@ var Beer = function(brand,name, type, flav_profile, description ,imgPath) {
   beers.push(this);
 
 };
+
+
 // ************************************************************************
 //
 //  Beer factory
@@ -75,9 +80,9 @@ var Beer = function(brand,name, type, flav_profile, description ,imgPath) {
 
 var BeerFactory = function() {
   var beerType = ['ale', 'lager', 'dark'];
-  var flavorAle = ['Warm and Malty', 'Crisp and Light', 'Hoppy', 'Sour'];
-  var flavorLager = ['Light and Refreshing', 'Deep and Malty', 'Light and Hoppy'];
-  var flavorDark = ['Coffee', 'Chocolate-y'];
+  var flavorAle = ['warm_malty', 'crisp_light', 'hoppy', 'sour'];
+  var flavorLager = ['light_crisp', 'deep_malty', 'light_hoppy'];
+  var flavorDark = ['coffee', 'chocolate'];
   var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux'];
 
   BeerFactory.prototype.createBeerList = function(){
@@ -91,85 +96,6 @@ var BeerFactory = function() {
     new Beer(beerBrands[4], 'Dutch Delight', beerType[2], flavorDark[0], dutchDelight);
     new Beer(beerBrands[2], 'Black Butte Porter', beerType[2], flavorDark[1], blackButte, '/img/beers/blackbutte.png');
   };
-};
-
-// ************************************************************************
-//
-// persistenceManager
-//
-// ************************************************************************
-
-var persistenceManager = {
-
-  // pass in user object to be saved
-  saveData: function(data){
-    var toStore = JSON.stringify(data);
-    localStorage.setItem('data', toStore);
-  },
-
-  // returns a stored user
-  getData: function(){
-    return JSON.parse(localStorage.getItem('data'));
-  },
-
-
-  // pass in a history object to be saved
-  storeHistoric: function(historicData){
-    var toStore = JSON.stringify(historicData);
-    localStorage.setItem('history', toStore);
-  },
-  // retrieve history from local storage
-  getHistoric: function(){
-    return JSON.parse(localStorage.getItem('history'));
-  }
-};
-// ************************************************************************
-//
-// SuggestionHistory
-//
-// ************************************************************************
-
-
-function ResultsHistory(){
-  this.historyData = persistenceManager.getHistoric();
-  if(this.historyData === null) this.fabricateHistory();
-}
-
-ResultsHistory.prototype.addBeer= function(beer){
-  this.historyData.push(beer);
-};
-
-ResultsHistory.prototype.fabricateHistory = function(){
-  var randomIndices = [];
-  for(var i = 0; i < 8; i++){
-    randomIndices.push(Math.floor(Math.random() * beers.length));
-  }
-
-  var history = [];
-
-  randomIndices.forEach(index => {
-    history.push(beers[index]);
-  });
-  this.historyData = history;
-};
-// ************************************************************************
-//  The package for chart function puts the history in data set
-//  more suitable for Chart.js. It returns a 2-dimensional array.
-//  At each index of the outer array contains the beer name and how many times
-//  It's been suggested
-// ************************************************************************
-ResultsHistory.prototype.packageForChart = function(){
-  var data = [];
-  beers.forEach(beer => {
-    data.push([beer.name,0]);
-  });
-
-  this.historyData.forEach(beer => {
-    data.forEach(datum =>{
-      if(beer.name === datum[0]) datum[1]++;
-    });
-  });
-  return data;
 };
 
 // **************************************************************************
@@ -193,6 +119,10 @@ var renderSetup = function(user){
   opt2.id = 'lager';
   opt3.id = 'dark';
 
+  opt1.class = 'types';
+  opt2.class = 'types';
+  opt3.class = 'types';
+
   var qTarget = document.getElementById('instructions');
   var instructions = document.createElement('h2');
   instructions.innerHTML = `${user.name}, pick a type of beer:`;
@@ -211,7 +141,7 @@ var promptUser = function(){
   var age = document.createElement('input');
   var submit = document.createElement('input');
   var nameLbl = document.createElement('label');
-  var ageLbl = document.createElement('label');  
+  var ageLbl = document.createElement('label');
 
   name.type = 'text';
   name.name = 'name';
@@ -222,9 +152,9 @@ var promptUser = function(){
   age.type = 'number';
   age.name = 'age';
   age.id = 'age';
-  ageLbl.htmlFor = 'age';  
+  ageLbl.htmlFor = 'age';
   ageLbl.innerHTML = 'Age: ';
-  
+
   submit.type = 'submit';
   submit.value = 'Submit';
 
@@ -237,44 +167,43 @@ var promptUser = function(){
 
   var formTarget = document.getElementById('responses');
   formTarget.appendChild(userForm);
-    
+
 };
 
 var userDataSubmit = function(event){
   event.preventDefault();
   var name = document.getElementById('name').value;
   var age = document.getElementById('age').value;
-  var user = new User(name, age);  
-  
+  var user = new User(name, age);
+
   !user.isLegal() ? displayTooYoung(user) : renderSetup(user);
 
-  
+
 };
 
 var displayTooYoung = function(user){
   removeChildren();
   var msg = document.createElement('p');
   var diff = user.legalAge - user.age;
-  msg.innerHTML = `Sorry, ${user.name} you're not allow to drink. Come back in ${diff} years`;
+  msg.innerHTML = `Sorry, ${user.name}. You're not allowed to drink. Come back in ${diff} years.`;
 
   var target = document.getElementById('responses');
   target.appendChild(msg);
 };
 
 
+var routeEvent = function(event){
+  var id = event.target.class;
+  if(id === 'types') beerTypeSelection(event);
+  if(id === 'flavors') beerFlavorSelection(event);
+};
+
 var beerTypeSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
-
-  if (id === 'ale'){
-    renderAle();
-  }
-  if (id === 'lager'){
-    renderLager();
-  }
-  if (id === 'dark'){
-    renderDark();
-  }
+  if(id === 'ale') renderAle();
+  if(id === 'lager') renderLager();
+  if(id === 'dark') renderDark();
 };
 
 function removeChildren(){
@@ -283,9 +212,7 @@ function removeChildren(){
     responseElement.removeChild(responseElement.lastChild);
   }
 }
-function getResults(){
 
-}
 
 var renderAle = function(){
   removeChildren();
@@ -293,20 +220,28 @@ var renderAle = function(){
   var aleFlavorType = document.getElementById('responses');
 
   var warm_malty = document.createElement('input');
+  warm_malty.id = 'warm_malty';
   warm_malty.type = 'image';
   warm_malty.src = '../img/buttons/warmmaltybtn.jpg';
+  warm_malty.class = 'flavors';
 
   var crisp_light = document.createElement('input');
+  crisp_light.id = 'crisp_light';
   crisp_light.type = 'image';
   crisp_light.src = '../img/buttons/crisplightbtn.jpg';
+  crisp_light.class = 'flavors';
 
   var hoppy = document.createElement('input');
+  hoppy.id = 'hoppy';
   hoppy.type = 'image';
   hoppy.src = '../img/buttons/hoppybtn.jpg';
+  hoppy.class = 'flavors';
 
   var sour = document.createElement('input');
+  sour.id = 'sour';
   sour.type = 'image';
   sour.src = '../img/buttons/sourbtn.jpg';
+  sour.class = 'flavors';
 
   aleFlavorType.appendChild(warm_malty);
   aleFlavorType.appendChild(crisp_light);
@@ -317,16 +252,22 @@ var renderLager = function(){
   removeChildren();
   var lagerFlavorType = document.getElementById('responses');
   var light_crisp = document.createElement('input');
+  light_crisp.id = 'light_crisp';
   light_crisp.type = 'image';
   light_crisp.src = '../img/buttons/lightcrispbtn.jpg';
+  light_crisp.class = 'flavors';
 
   var deep_malty = document.createElement('input');
+  deep_malty.id = 'deep_malty';
   deep_malty.type = 'image';
   deep_malty.src = '../img/buttons/deepmaltybtn.jpg';
+  deep_malty.class = 'flavors';
 
   var light_hoppy = document.createElement('input');
+  light_hoppy.id = 'light_hoppy';
   light_hoppy.type = 'image';
   light_hoppy.src = '../img/buttons/lighthoppybtn.jpg';
+  light_hoppy.class = 'flavors';
 
   lagerFlavorType.appendChild(light_crisp);
   lagerFlavorType.appendChild(deep_malty);
@@ -339,69 +280,38 @@ var renderDark = function(){
   var darkFlavorType = document.getElementById('responses');
 
   var coffee = document.createElement('input');
+  coffee.id = 'coffee';
   coffee.type = 'image';
   coffee.src = '../img/buttons/coffeestoutbtn.jpg';
-
+  coffee.class = 'flavors';
   var chocolate = document.createElement('input');
+  chocolate.id = 'chocolate';
   chocolate.type = 'image';
   chocolate.src = '../img/buttons/chocolateporterbtn.jpg';
-
+  chocolate.class = 'flavors';
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);
 };
-//sort beer arrays to get user's Beer Match
-var matchBeerList = function (){
-  console.log(beers);
-  beers.forEach(beer => console.log(beer.type));
-  beers.forEach(beer => console.log(beer.flav_profile));
-};
 
-//sends user to results page using the pathname
-var redirectToResultsPage = function(){
-  window.location.pathname = '/pages/results.html';
+
+var directToResults = function(){
+  window.location.replace('./pages/results.html');
 };
 
 var beerFlavorSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
+  var suggestion;
+  beers.forEach(beer => {
+    if(beer.flav_profile === id) suggestion = beer;
+  });
 
-  if (id === 'warm_malty'){
-    getResults();
-  }
-  if (id === 'crisp_light'){
-    getResults();
-  }
-  if (id === 'hoppy'){
-    getResults();
-  }
-  if (id === 'sour'){
-    getResults();
-  }
-  if (id === 'light_crisp'){
-    getResults();
-  }
-  if (id === 'deep_malty'){
-    getResults();
-  }
-  if (id === 'light_hoppy'){
-    getResults();
-  }
-  if (id === 'coffee'){
-    getResults();
-  }
-  if (id === 'chocolate'){
-    getResults();
-  }
+  resultsHis.addBeer(suggestion);
+  persistenceManager.saveData(suggestion, 'beer');
+  directToResults();
 };
-//beerFlavorSelection();
 
-var getResults = function(){
-  removeChildren();
-  matchBeerList();
-  saveData();
-  redirectToResultsPage();
-  getData();
-};
+var resultsHis = new ResultsHistory();
 
 // ************************************************************************
 //
@@ -409,17 +319,17 @@ var getResults = function(){
 //
 // ************************************************************************
 
-!function(){  
+!function(){
   var factory = new BeerFactory();
-  factory.createBeerList();  
+  factory.createBeerList();
+
+
+  addEventListener('click', routeEvent);
+  addEventListener('submit', userDataSubmit);
   promptUser();
 }();
 
-addEventListener('click', beerTypeSelection);
 
-addEventListener('click', beerFlavorSelection);
-
-addEventListener('submit', userDataSubmit);
 
 
 
