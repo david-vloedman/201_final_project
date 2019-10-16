@@ -48,6 +48,12 @@ RenderResults.prototype.renderImg = function(){
   resultIMG.innerHTML = this.beer.img;
 };
 
+var test = RenderResults(beer[5]);
+test.getImg;
+test.getList;
+test.renderImg;
+test.renderList;
+
 // ************************************************************************
 //
 // Beer and Beers
