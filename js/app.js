@@ -111,7 +111,6 @@ var persistenceManager = {
     return JSON.parse(localStorage.getItem('user'));
   },
 
-
   // pass in a history object to be saved
   storeHistoric: function(historicData){
     var toStore = JSON.stringify(historicData);
@@ -170,6 +169,7 @@ ResultsHistory.prototype.packageForChart = function(){
   });
   return data;
 };
+
 // ************************************************************************
 //
 //   Entry Point
@@ -265,30 +265,33 @@ var beerTypeSelection = function(event){
 
       darkFlavorType.appendChild(coffee);
       darkFlavorType.appendChild(chocolate);
-    }
+    };
   
 
-  };
+  
 
+// CHART JS
+//Create Array called dataArr, what perameters to feed it?
+var dataArr = [beer.name, 1];
 
-
-
+function makeResultsChart() {
 new Chart(document.getElementById("resultsChart"), {
   type: 'pie',
   data: {
-    labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    labels: ["Pale", "Lager", "Dark"],
     datasets: [{
-      label: "Results",
-      backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-      data: [2478,5267,734,784,433]
-    }]
+      label: ResultsHistory(),
+      backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+      data: ResultsHistory(),
+        }]
   },
   options: {
     title: {
       display: true,
-      text: 'Predicted world population (millions) in 2050'
+      text: 'Average Results of Users'
     }
   }
 });
+};
 
-
+console.log(makeResultsChart);
