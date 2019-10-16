@@ -348,10 +348,12 @@ var renderDark = function(){
   var coffee = document.createElement('input');
   coffee.type = 'image';
   coffee.src = '../img/buttons/coffeestoutbtn.jpg';
-
+  coffee.id = 'coffee';
+  
   var chocolate = document.createElement('input');
   chocolate.type = 'image';
   chocolate.src = '../img/buttons/chocolateporterbtn.jpg';
+  chocolate.id = 'chocolate';
 
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);

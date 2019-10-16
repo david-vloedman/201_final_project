@@ -152,8 +152,25 @@
 }
 
 
+/* Dark picked first */
 
+#coffee {
+  
+  position: absolute;
+    left: 620px;
+    top: 255px;
+    width: 260px;
+    z-index: +1;
+}
 
+#chocolate {
+  
+  position: absolute;
+    left: 620px;
+    top: 405px;
+    width: 260px;
+    z-index: +1;
+}
 
 
 
