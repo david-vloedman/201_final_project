@@ -86,7 +86,7 @@ var BeerFactory = function() {
   var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux'];
 
   BeerFactory.prototype.createBeerList = function(){
-    // new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
+    new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
     new Beer(beerBrands[1], 'Sweet As Pacific Pale', beerType[0],flavorAle[1], '/img/beers/sap.jpg');
     new Beer(beerBrands[3], 'Vicious Mosquito', beerType[0], flavorAle[2], viciousMosq, '/img/beers/viciousmosquito.jpg');
     new Beer(beerBrands[5], 'ChingChing Sour', beerType[0], flavorAle[3], chingChingSour, '/img/beers/chingsour.jpg');
@@ -351,7 +351,8 @@ var beerFlavorSelection = function(event){
   directToResults();
 };
 
-var resultsHis = new ResultsHistory();
+
+var resultsHis;
 
 // ************************************************************************
 //
@@ -360,10 +361,10 @@ var resultsHis = new ResultsHistory();
 // ************************************************************************
 
 !function(){
+  resultsHis = new ResultsHistory();
+
   var factory = new BeerFactory();
   factory.createBeerList();
-
-
   addEventListener('click', routeEvent);
   addEventListener('submit', userDataSubmit);
   promptUser();
