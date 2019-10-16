@@ -1,0 +1,72 @@
+#indexH1 {
+  font-size: 58px;
+  margin-left: 31%;
+  padding: 45px;
+}
+
+#AboutButton {
+  font-size: 28px;
+  position: absolute;
+  margin-top: 42%;
+  margin-left: 90%;
+}
+
+#ResultsButton {
+  font-size: 28px;
+  position: absolute;
+  margin-top: 40%;
+  margin-left: 90%;
+}
+
+#instructions {
+  margin-top:25px;
+  margin-left:36%;
+  margin-bottom:25px;
+  font-size: 36px; 
+}
+
+#instructions>p {
+  position: absolute;
+    left: 490px;
+    top: 265px;
+    z-index: -2;
+    font-size: 18px;
+}
+#instructions>p2 {
+  position: absolute;
+    left: 490px;
+    top: 285px;
+    z-index: -2;
+    font-size: 18px;
+}
+#instructions>p3 {
+  position: absolute;
+    left: 490px;
+    top: 305px;
+    z-index: -2;
+    font-size: 18px;
+}
+
+#button1 {
+  position: absolute;
+    left: 620px;
+    top: 455px;
+    width: 120px;
+    z-index: +1;
+}
+
+#button2 {
+  position: absolute;
+    left: 620px;
+    top: 535px;
+    width: 120px;
+    z-index: +1;
+}
+
+#button3 {
+  position: absolute;
+    left: 620px;
+    top: 615px;
+    width: 120px;
+    z-index: +1;
+}
