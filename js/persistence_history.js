@@ -8,6 +8,7 @@
 function ResultsHistory(){
   this.historyData = persistenceManager.getHistoric();
   if(this.historyData === null) this.fabricateHistory();
+
 }
 
 ResultsHistory.prototype.addBeer = function(beer){
@@ -16,16 +17,19 @@ ResultsHistory.prototype.addBeer = function(beer){
 
 ResultsHistory.prototype.fabricateHistory = function(){
   var randomIndices = [];
-  for(var i = 0; i < 8; i++){
+  for(var i = 0; i < beers.length; i++){
+    console.log('looping');
     randomIndices.push(Math.floor(Math.random() * beers.length));
   }
 
   var history = [];
-
+  console.log('index', randomIndices);
   randomIndices.forEach(index => {
     history.push(beers[index]);
   });
+  console.log(this.historyData);
   this.historyData = history;
+  persistenceManager.storeHistoric(this.historyData);
 };
 // ************************************************************************
 //  The package for chart function puts the history in data set
