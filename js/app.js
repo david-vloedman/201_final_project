@@ -93,7 +93,6 @@ var BeerFactory = function() {
   };
 };
 
-
 // ************************************************************************
 //
 // persistenceManager
@@ -103,14 +102,14 @@ var BeerFactory = function() {
 var persistenceManager = {
 
   // pass in user object to be saved
-  saveUser: function(user){
-    var toStore = JSON.stringify(user);
-    localStorage.setItem('user', toStore);
+  saveData: function(data){
+    var toStore = JSON.stringify(data);
+    localStorage.setItem('data', toStore);
   },
 
   // returns a stored user
-  getUser: function(){
-    return JSON.parse(localStorage.getItem('user'));
+  getData: function(){
+    return JSON.parse(localStorage.getItem('data'));
   },
 
 
@@ -267,6 +266,29 @@ var renderDark = function(){
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);
 };
+//sort beer arrays to get user's Beer Match
+var matchBeerList = function (){
+  console.log(beers);
+  beers.forEach(beer => console.log(beer.type));
+  beers.forEach(beer => console.log(beer.flav_profile));
+};
+
+// pass in beer match result to be saved
+var saveBeerMatch = function(){
+  var toStore = JSON.stringify(beerMatch);
+  localStorage.setItem('beerMatch', toStore);
+};
+
+// returns stored beer match
+var getBeerMatch = function(){
+  return JSON.parse(localStorage.getItem('beerMatch'));
+};
+
+//sends user to results page using the pathname
+var redirectToResultsPage = function(){
+  window.location.pathname = '/pages/results.html';
+};
+
 var beerFlavorSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
@@ -299,33 +321,16 @@ var beerFlavorSelection = function(event){
     getResults();
   }
 };
+//beerFlavorSelection();
 
 var getResults = function(){
   removeChildren();
-
+  matchBeerList();
   saveBeerMatch();
   redirectToResultsPage();
   getBeerMatch();
-
 };
 
-
-  // pass in beer match result to be saved
-  saveBeerMatch function(){
-    var toStore = JSON.stringify(beerMatch);
-    localStorage.setItem('beerMatch', toStore);
-  };
-
-  // returns stored beer match
-  getBeerMatch function(){
-    return JSON.parse(localStorage.getItem('beerMatch'));
-  };
-
-  //sends user to results page using the pathname
-  redirectToResultsPage function(){
-    window.location.pathname = '/pages/results.html'
-  };
-  
 // ************************************************************************
 //
 //   Entry Point
