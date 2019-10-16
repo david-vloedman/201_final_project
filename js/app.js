@@ -84,19 +84,17 @@ var BeerFactory = function() {
   var flavorLager = ['light_crisp', 'deep_malty', 'light_hoppy'];
   var flavorDark = ['coffee', 'chocolate'];
   var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux'];
-
-  BeerFactory.prototype.createBeerList = function(){
-    new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
-    new Beer(beerBrands[1], 'Sweet As Pacific Pale', beerType[0],flavorAle[1], '/img/beers/sap.jpg');
-    new Beer(beerBrands[3], 'Vicious Mosquito', beerType[0], flavorAle[2], viciousMosq, '/img/beers/viciousmosquito.jpg');
-    new Beer(beerBrands[5], 'ChingChing Sour', beerType[0], flavorAle[3], chingChingSour, '/img/beers/chingsour.jpg');
-    new Beer(beerBrands[2], 'Pacific Wonderland', beerType[1], flavorLager[0], pacificWond, './img/beers/pacificwonderland.png');
-    new Beer(beerBrands[5], 'Bend Black Diamond Lager', beerType[1], flavorLager[1], bendBlackDiamond, 'img/beers/blackdiamond.jpg');
-    new Beer(beerBrands[6], 'Pilsner', beerType[1], flavorLager[2], cruxPils, '/img/beers/cruxpils.jpg');
-    new Beer(beerBrands[4], 'Dutch Delight', beerType[2], flavorDark[0], dutchDelight);
-    new Beer(beerBrands[2], 'Black Butte Porter', beerType[2], flavorDark[1], blackButte, '/img/beers/blackbutte.png');
-  };
+  new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
+  new Beer(beerBrands[1], 'Sweet As Pacific Pale', beerType[0],flavorAle[1], sweetAs, '/img/beers/sap.png');
+  new Beer(beerBrands[3], 'Vicious Mosquito', beerType[0], flavorAle[2], viciousMosq, '/img/beers/viciousmosquito.jpg');
+  new Beer(beerBrands[5], 'ChingChing Sour', beerType[0], flavorAle[3], chingChingSour, '/img/beers/chingsour.jpg');
+  new Beer(beerBrands[2], 'Pacific Wonderland', beerType[1], flavorLager[0], pacificWond, './img/beers/pacificwonderland.png');
+  new Beer(beerBrands[5], 'Bend Black Diamond Lager', beerType[1], flavorLager[1], bendBlackDiamond, 'img/beers/blackdiamond.jpg');
+  new Beer(beerBrands[6], 'Pilsner', beerType[1], flavorLager[2], cruxPils, '/img/beers/cruxpils.jpg');
+  new Beer(beerBrands[4], 'Dutch Delight', beerType[2], flavorDark[0], dutchDelight, 'img/beers/dutchdelight.jpg');
+  new Beer(beerBrands[2], 'Black Butte Porter', beerType[2], flavorDark[1], blackButte, '/img/beers/blackbutte.png');
 };
+
 
 // **************************************************************************
 //
@@ -346,7 +344,7 @@ var beerFlavorSelection = function(event){
     if(beer.flav_profile === id) suggestion = beer;
   });
 
-  resultsHis.addBeer(suggestion);
+  
   persistenceManager.saveData(suggestion, 'beer');
   directToResults();
 };
@@ -361,13 +359,12 @@ var resultsHis;
 // ************************************************************************
 
 !function(){
-  resultsHis = new ResultsHistory();
-
-  var factory = new BeerFactory();
-  factory.createBeerList();
+  new BeerFactory();  
+  persistenceManager.saveData(beers, 'beers');
   addEventListener('click', routeEvent);
   addEventListener('submit', userDataSubmit);
   promptUser();
+
 }();
 
 

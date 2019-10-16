@@ -5,9 +5,9 @@
 // ************************************************************************
 
 
-function ResultsHistory(){
+function ResultsHistory(beers){
   this.historyData = persistenceManager.getHistoric();
-  if(this.historyData === null) this.fabricateHistory();
+  if(this.historyData === null) this.fabricateHistory(beers);
 
 }
 
@@ -15,10 +15,9 @@ ResultsHistory.prototype.addBeer = function(beer){
   this.historyData.push(beer);
 };
 
-ResultsHistory.prototype.fabricateHistory = function(){
+ResultsHistory.prototype.fabricateHistory = function(beers){
   var randomIndices = [];
-  for(var i = 0; i < beers.length; i++){
-    console.log('looping');
+  for(var i = 0; i < beers.length; i++){    
     randomIndices.push(Math.floor(Math.random() * beers.length));
   }
 
@@ -26,8 +25,7 @@ ResultsHistory.prototype.fabricateHistory = function(){
   console.log('index', randomIndices);
   randomIndices.forEach(index => {
     history.push(beers[index]);
-  });
-  console.log(this.historyData);
+  });  
   this.historyData = history;
   persistenceManager.storeHistoric(this.historyData);
 };

@@ -1,5 +1,6 @@
 'using strict';
 
+
 var renderResults = function(){
   var children = [];
 
@@ -20,11 +21,15 @@ var renderResults = function(){
   children.forEach(child => { target.appendChild(child); });
 };
 
+var createCanvas = function(){
+  var canvas = document.createElement('canvas');
+}
 
-var data = persistenceManager.getHistoric();
+
 
 !function(){
-  console.log(data);
+  beers = persistenceManager.getData('beers');
+  var resultHis = new ResultsHistory(beers);
   renderResults();
 }();
 
