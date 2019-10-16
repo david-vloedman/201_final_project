@@ -93,7 +93,6 @@ var BeerFactory = function() {
   };
 };
 
-
 // ************************************************************************
 //
 // persistenceManager
@@ -103,14 +102,14 @@ var BeerFactory = function() {
 var persistenceManager = {
 
   // pass in user object to be saved
-  saveUser: function(user){
-    var toStore = JSON.stringify(user);
-    localStorage.setItem('user', toStore);
+  saveData: function(data){
+    var toStore = JSON.stringify(data);
+    localStorage.setItem('data', toStore);
   },
 
   // returns a stored user
-  getUser: function(){
-    return JSON.parse(localStorage.getItem('user'));
+  getData: function(){
+    return JSON.parse(localStorage.getItem('data'));
   },
 
 
@@ -284,6 +283,9 @@ function removeChildren(){
     responseElement.removeChild(responseElement.lastChild);
   }
 }
+function getResults(){
+
+}
 
 var renderAle = function(){
   removeChildren();
@@ -347,6 +349,18 @@ var renderDark = function(){
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);
 };
+//sort beer arrays to get user's Beer Match
+var matchBeerList = function (){
+  console.log(beers);
+  beers.forEach(beer => console.log(beer.type));
+  beers.forEach(beer => console.log(beer.flav_profile));
+};
+
+//sends user to results page using the pathname
+var redirectToResultsPage = function(){
+  window.location.pathname = '/pages/results.html';
+};
+
 var beerFlavorSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
@@ -379,11 +393,15 @@ var beerFlavorSelection = function(event){
     getResults();
   }
 };
+//beerFlavorSelection();
 
 var getResults = function(){
   removeChildren();
+  matchBeerList();
+  saveData();
+  redirectToResultsPage();
+  getData();
 };
-
 
 // ************************************************************************
 //
