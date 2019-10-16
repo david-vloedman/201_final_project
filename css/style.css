@@ -208,7 +208,7 @@
   position: absolute; 
   z-index:-2;
   width: 55%;
-  height:260%;
+  height:255%;
   margin-top:0px;
   margin-left:20%;
   background-color: white
@@ -218,7 +218,10 @@
   font-size: 78px;
   margin-left: 25%;
   margin-bottom:10px;
-  padding: 0px;
+  padding-top: 50px;
+  height: 20%;
+  text-align: bottom;
+  
   
 }
 /* Team Information */
@@ -226,7 +229,7 @@
 #LindsayIMG {
   position: absolute;
   left: 355px;
-  top: 215px;
+  top: 305px;
   width: 260px;
   z-index: +1;
   border-radius: 50%;
@@ -235,7 +238,7 @@
 #DavidIMG {
   position: absolute;
     left: 355px;
-    top: 645px;
+    top: 725px;
     width: 260px;
     z-index: +1;
     border-radius: 50%;
@@ -244,7 +247,7 @@
   #NatalieIMG {
     position: absolute;
       left: 355px;
-      top: 1045px;
+      top: 1115px;
       width: 260px;
       z-index: +1;
       border-radius: 50%;
@@ -253,10 +256,10 @@
   #MasonIMG {
     position: absolute;
     left: 355px;
-    top: 1445px;
+    top: 1545px;
     width: 260px;
     z-index: +1;
-    margin-bottom:200;
+    margin-bottom:0;
     border-radius: 50%;
   }
   
