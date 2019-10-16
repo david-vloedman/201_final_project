@@ -302,23 +302,30 @@ var beerFlavorSelection = function(event){
 
 var getResults = function(){
   removeChildren();
-  beerMatchLocalStorage
+
+  saveBeerMatch();
+  redirectToResultsPage();
+  getBeerMatch();
+
 };
 
-var beerMatchLocalStorage = {
 
   // pass in beer match result to be saved
-  saveBeerMatch: function(beerMatch){
+  saveBeerMatch function(){
     var toStore = JSON.stringify(beerMatch);
     localStorage.setItem('beerMatch', toStore);
-  },
+  };
 
   // returns stored beer match
-  getBeerMatch: function(){
+  getBeerMatch function(){
     return JSON.parse(localStorage.getItem('beerMatch'));
-  },
-};
+  };
 
+  //sends user to results page using the pathname
+  redirectToResultsPage function(){
+    window.location.pathname = '/pages/results.html'
+  };
+  
 // ************************************************************************
 //
 //   Entry Point
