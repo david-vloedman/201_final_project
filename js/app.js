@@ -185,7 +185,9 @@ var displayTooYoung = function(user){
   removeChildren();
   var msg = document.createElement('p');
   var diff = user.legalAge - user.age;
+
   msg.innerHTML = `Sorry, ${user.name}. You're not allowed to drink. Come back in ${diff} years.`;
+
 
   var target = document.getElementById('responses');
   target.appendChild(msg);
@@ -223,25 +225,41 @@ var renderAle = function(){
   warm_malty.id = 'warm_malty';
   warm_malty.type = 'image';
   warm_malty.src = '../img/buttons/warmmaltybtn.jpg';
+
+  warm_malty.id = 'warm_malty';
+
   warm_malty.class = 'flavors';
+
 
   var crisp_light = document.createElement('input');
   crisp_light.id = 'crisp_light';
   crisp_light.type = 'image';
   crisp_light.src = '../img/buttons/crisplightbtn.jpg';
+
+  crisp_light.id = 'crisp_light';
+
   crisp_light.class = 'flavors';
+
 
   var hoppy = document.createElement('input');
   hoppy.id = 'hoppy';
   hoppy.type = 'image';
   hoppy.src = '../img/buttons/hoppybtn.jpg';
+
+  hoppy.id = 'hoppy';
+
   hoppy.class = 'flavors';
+
 
   var sour = document.createElement('input');
   sour.id = 'sour';
   sour.type = 'image';
   sour.src = '../img/buttons/sourbtn.jpg';
+
+  sour.id = 'sour';
+
   sour.class = 'flavors';
+
 
   aleFlavorType.appendChild(warm_malty);
   aleFlavorType.appendChild(crisp_light);
@@ -255,19 +273,31 @@ var renderLager = function(){
   light_crisp.id = 'light_crisp';
   light_crisp.type = 'image';
   light_crisp.src = '../img/buttons/lightcrispbtn.jpg';
+
+  light_crisp.id = 'light_crisp';
+
   light_crisp.class = 'flavors';
+
 
   var deep_malty = document.createElement('input');
   deep_malty.id = 'deep_malty';
   deep_malty.type = 'image';
   deep_malty.src = '../img/buttons/deepmaltybtn.jpg';
+
+  deep_malty.id = 'deep_malty';
+
   deep_malty.class = 'flavors';
+
 
   var light_hoppy = document.createElement('input');
   light_hoppy.id = 'light_hoppy';
   light_hoppy.type = 'image';
   light_hoppy.src = '../img/buttons/lighthoppybtn.jpg';
+
+  light_hoppy.id = 'light_hoppy';
+
   light_hoppy.class = 'flavors';
+
 
   lagerFlavorType.appendChild(light_crisp);
   lagerFlavorType.appendChild(deep_malty);
@@ -283,12 +313,22 @@ var renderDark = function(){
   coffee.id = 'coffee';
   coffee.type = 'image';
   coffee.src = '../img/buttons/coffeestoutbtn.jpg';
+
+  coffee.id = 'coffee';
+  
+
   coffee.class = 'flavors';
+
   var chocolate = document.createElement('input');
   chocolate.id = 'chocolate';
   chocolate.type = 'image';
   chocolate.src = '../img/buttons/chocolateporterbtn.jpg';
+
+  chocolate.id = 'chocolate';
+
+
   chocolate.class = 'flavors';
+
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);
 };
@@ -328,7 +368,6 @@ var resultsHis = new ResultsHistory();
   addEventListener('submit', userDataSubmit);
   promptUser();
 }();
-
 
 
 
