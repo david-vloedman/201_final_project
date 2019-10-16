@@ -272,7 +272,7 @@ var beerTypeSelection = function(event){
 
 // CHART JS
 //Create Array called dataArr, what perameters to feed it?
-var dataArr = [beer.name, 1];
+var dataArr = [beer.name, 0];
 
 function makeResultsChart() {
 new Chart(document.getElementById("resultsChart"), {
@@ -282,7 +282,7 @@ new Chart(document.getElementById("resultsChart"), {
     datasets: [{
       label: ResultsHistory(),
       backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-      data: ResultsHistory(),
+      data: dataArr[0,0],
         }]
   },
   options: {
@@ -294,4 +294,3 @@ new Chart(document.getElementById("resultsChart"), {
 });
 };
 
-console.log(makeResultsChart);
