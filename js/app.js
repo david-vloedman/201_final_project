@@ -48,11 +48,7 @@ RenderResults.prototype.renderImg = function(){
   resultIMG.innerHTML = this.beer.img;
 };
 
-var test = RenderResults(beer[5]);
-test.getImg;
-test.getList;
-test.renderImg;
-test.renderList;
+
 
 // ************************************************************************
 //
@@ -151,16 +147,16 @@ ResultsHistory.prototype.fabricateHistory = function(){
   }
 
   var history = [];
-  
+
   randomIndices.forEach(index => {
     history.push(beers[index]);
   });
   this.historyData = history;
 };
 // ************************************************************************
-//  The package for chart function puts the history in data set 
+//  The package for chart function puts the history in data set
 //  more suitable for Chart.js. It returns a 2-dimensional array.
-//  At each index of the outer array contains the beer name and how many times 
+//  At each index of the outer array contains the beer name and how many times
 //  It's been suggested
 // ************************************************************************
 ResultsHistory.prototype.packageForChart = function(){
@@ -184,94 +180,129 @@ ResultsHistory.prototype.packageForChart = function(){
 // **************************************************************************
 
 var beerTypeSelection = function(event){
-  var eventSRC = event.target
+  var eventSRC = event.target;
   var id = eventSRC.id;
 
 
-      if (id === 'ale'){
-        renderAle();
-      }
-      if (id === 'lager'){
-        renderLager();
-      }
-      if (id === 'dark'){
-        renderDark();
-      }
-    }
+  if (id === 'ale'){
+    renderAle();
+  }
+  if (id === 'lager'){
+    renderLager();
+  }
+  if (id === 'dark'){
+    renderDark();
+  }
+};
 
-    function removeChildren(){
-      var responseElement = document.getElementById('responses');
-      while(responseElement.hasChildNodes()){
-        responseElement.removeChild(responseElement.lastChild)
-      }
-    }
+function removeChildren(){
+  var responseElement = document.getElementById('responses');
+  while(responseElement.hasChildNodes()){
+    responseElement.removeChild(responseElement.lastChild);
+  }
+}
 
-    renderAle = function(){
-      removeChildren();
-      
-      var aleFlavorType = document.getElementById('responses');
+var renderAle = function(){
+  removeChildren();
 
-      var warm_malty = document.createElement('input');
-      warm_malty.type = 'image';
-      warm_malty.src = 'warmmaltybtn.jpg';
+  var aleFlavorType = document.getElementById('responses');
 
-      var crisp_light = document.createElement('input');
-      crisp_light.type = 'image';
-      crisp_light.src = 'crisplightbtn.jpg';
+  var warm_malty = document.createElement('input');
+  warm_malty.type = 'image';
+  warm_malty.src = 'warmmaltybtn.jpg';
 
-      var hoppy = document.createElement('input');
-      hoppy.type = 'image';
-      hoppy.src = 'hoppybtn.jpg';
+  var crisp_light = document.createElement('input');
+  crisp_light.type = 'image';
+  crisp_light.src = 'crisplightbtn.jpg';
 
-      var sour = document.createElement('input');
-      sour.type = 'image';
-      sour.src = 'sourbtn.jpg';
+  var hoppy = document.createElement('input');
+  hoppy.type = 'image';
+  hoppy.src = 'hoppybtn.jpg';
 
-      aleFlavorType.appendChild(warm_malty);
-      aleFlavorType.appendChild(crisp_light);
-      aleFlavorType.appendChild(hoppy);
-      aleFlavorType.appendChild(sour);
-    };
+  var sour = document.createElement('input');
+  sour.type = 'image';
+  sour.src = 'sourbtn.jpg';
 
-    var beerFlavorSelection = function(event){
-      var eventSRC = event.target
-      var id = eventSRC.id;
-    
-          if (id === 'warm_malty'){
-            getResults();
-          }
-          if (id === 'crisp_light'){
-            getResults();
-          }
-          if (id === 'hoppy'){
-            getResults();
-          }
-          if (id === 'sour'){
-            getResults();
-          }
-          if (id === 'light_crisp'){
-            getResults();
-          }
-          if (id === 'deep_malty'){
-            getResults();
-          }
-          if (id === 'light_hoppy'){
-            getResults();
-          }
-          if (id === 'coffee'){
-            getResults();
-          }
-          if (id === 'chocolate'){
-            getResults();
-          }
-        }
-    
-        getResults = function(){
-          removeChildren();
-        }  
+  aleFlavorType.appendChild(warm_malty);
+  aleFlavorType.appendChild(crisp_light);
+  aleFlavorType.appendChild(hoppy);
+  aleFlavorType.appendChild(sour);
+};
+var renderLager = function(){
+  removeChildren();
+  var lagerFlavorType = document.getElementById('responses');
+  var light_crisp = document.createElement('input');
+  light_crisp.type = 'image';
+  light_crisp.src = 'lightcrispbtn.jpg';
+
+  var deep_malty = document.createElement('input');
+  deep_malty.type = 'image';
+  deep_malty.src = 'deepmaltybtn.jpg';
+
+  var light_hoppy = document.createElement('input');
+  light_hoppy.type = 'image';
+  light_hoppy.src = 'lighthoppybtn.jpg';
+
+  lagerFlavorType.appendChild(light_crisp);
+  lagerFlavorType.appendChild(deep_malty);
+  lagerFlavorType.appendChild(light_hoppy);
+};
+
+var renderDark = function(){
+  removeChildren();
+
+  var darkFlavorType = document.getElementById('responses');
+
+  var coffee = document.createElement('input');
+  coffee.type = 'image';
+  coffee.src = 'coffeebtn.jpg';
+
+  var chocolate = document.createElement('input');
+  chocolate.type = 'image';
+  chocolate.src = 'chocolatebtn.jpg';
+
+  darkFlavorType.appendChild(coffee);
+  darkFlavorType.appendChild(chocolate);
+};
+var beerFlavorSelection = function(event){
+  var eventSRC = event.target;
+  var id = eventSRC.id;
+
+  if (id === 'warm_malty'){
+    getResults();
+  }
+  if (id === 'crisp_light'){
+    getResults();
+  }
+  if (id === 'hoppy'){
+    getResults();
+  }
+  if (id === 'sour'){
+    getResults();
+  }
+  if (id === 'light_crisp'){
+    getResults();
+  }
+  if (id === 'deep_malty'){
+    getResults();
+  }
+  if (id === 'light_hoppy'){
+    getResults();
+  }
+  if (id === 'coffee'){
+    getResults();
+  }
+  if (id === 'chocolate'){
+    getResults();
+  }
+};
+
+var getResults = function(){
+  removeChildren();
+};
 
 
-  // ************************************************************************
+// ************************************************************************
 //
 //   Entry Point
 //
@@ -281,4 +312,4 @@ var beerTypeSelection = function(event){
   var factory = new BeerFactory();
   factory.createBeerList();
 }();
-        
+
