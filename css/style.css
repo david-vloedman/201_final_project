@@ -57,6 +57,11 @@
     z-index: -2;
     font-size: 18px;
 }
+
+#responses>p {
+  font-size:48;
+  margin-left: 210px;
+}
 /* display: contents after button is pressed */
 #ale {
   
@@ -75,15 +80,84 @@
     width: 220px;
     z-index: +1;
 }
-/* display: contents after button is pressed */
-#dark {
 
+#dark {
   position: absolute;
     left: 620px;
     top: 555px;
     width: 220px;
     z-index: +1;
+
+  }
+  /* display: contents after button is pressed */
+  
+  /* Ale picked first */
+  
+  #hoppy {
+    position: absolute;
+    left: 620px;
+    top: 235px;
+    width: 220px;
+    z-index: +1; 
+  }
+  
+  #crisp_light {
+    position: absolute;
+    left: 620px;
+    top: 355px;
+    width: 220px;
+    z-index: +1;
+  }
+
+   #warm_malty {
+    position: absolute;
+    left: 620px;
+    top: 475px;
+    width: 220px;
+    z-index: +1;
+  }
+
+  #sour {
+  position: absolute;
+  left: 620px;
+  top: 585px;
+  width: 220px;
+  z-index: +1; 
+  }
+
+/* Lager picked first */ 
+
+#light_crisp {
+  position: absolute;
+  left: 620px;
+  top: 255px;
+  width: 220px;
+  z-index: +1;
 }
+
+#deep_malty {
+  position: absolute;
+  left: 620px;
+  top: 405px;
+  width: 220px;
+  z-index: +1;  
+}
+
+#light_hoppy {
+  position: absolute;
+  left: 620px;
+  top: 555px;
+  width: 220px;
+  z-index: +1;
+}
+
+
+
+
+
+
+
+
 
 /* ABOUT HTML CSS */
 

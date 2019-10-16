@@ -255,7 +255,7 @@ var displayTooYoung = function(user){
   removeChildren();
   var msg = document.createElement('p');
   var diff = user.legalAge - user.age;
-  msg.innerHTML = `Sorry, ${user.name} you're not allow to drink. Come back in ${diff} years`;
+  msg.innerHTML = `Sorry, ${user.name} you're not allowed to drink. Come back in ${diff} years`;
 
   var target = document.getElementById('responses');
   target.appendChild(msg);
@@ -295,18 +295,22 @@ var renderAle = function(){
   var warm_malty = document.createElement('input');
   warm_malty.type = 'image';
   warm_malty.src = '../img/buttons/warmmaltybtn.jpg';
+  warm_malty.id = 'warm_malty';
 
   var crisp_light = document.createElement('input');
   crisp_light.type = 'image';
   crisp_light.src = '../img/buttons/crisplightbtn.jpg';
+  crisp_light.id = 'crisp_light';
 
   var hoppy = document.createElement('input');
   hoppy.type = 'image';
   hoppy.src = '../img/buttons/hoppybtn.jpg';
+  hoppy.id = 'hoppy';
 
   var sour = document.createElement('input');
   sour.type = 'image';
   sour.src = '../img/buttons/sourbtn.jpg';
+  sour.id = 'sour';
 
   aleFlavorType.appendChild(warm_malty);
   aleFlavorType.appendChild(crisp_light);
@@ -319,14 +323,17 @@ var renderLager = function(){
   var light_crisp = document.createElement('input');
   light_crisp.type = 'image';
   light_crisp.src = '../img/buttons/lightcrispbtn.jpg';
+  light_crisp.id = 'light_crisp';
 
   var deep_malty = document.createElement('input');
   deep_malty.type = 'image';
   deep_malty.src = '../img/buttons/deepmaltybtn.jpg';
+  deep_malty.id = 'deep_malty';
 
   var light_hoppy = document.createElement('input');
   light_hoppy.type = 'image';
   light_hoppy.src = '../img/buttons/lighthoppybtn.jpg';
+  light_hoppy.id = 'light_hoppy';
 
   lagerFlavorType.appendChild(light_crisp);
   lagerFlavorType.appendChild(deep_malty);
