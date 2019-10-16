@@ -292,19 +292,19 @@ var renderAle = function(){
 
   var warm_malty = document.createElement('input');
   warm_malty.type = 'image';
-  warm_malty.src = 'warmmaltybtn.jpg';
+  warm_malty.src = '../img/buttons/warmmaltybtn.jpg';
 
   var crisp_light = document.createElement('input');
   crisp_light.type = 'image';
-  crisp_light.src = 'crisplightbtn.jpg';
+  crisp_light.src = '../img/buttons/crisplightbtn.jpg';
 
   var hoppy = document.createElement('input');
   hoppy.type = 'image';
-  hoppy.src = 'hoppybtn.jpg';
+  hoppy.src = '../img/buttons/hoppybtn.jpg';
 
   var sour = document.createElement('input');
   sour.type = 'image';
-  sour.src = 'sourbtn.jpg';
+  sour.src = '../img/buttons/sourbtn.jpg';
 
   aleFlavorType.appendChild(warm_malty);
   aleFlavorType.appendChild(crisp_light);
@@ -316,15 +316,15 @@ var renderLager = function(){
   var lagerFlavorType = document.getElementById('responses');
   var light_crisp = document.createElement('input');
   light_crisp.type = 'image';
-  light_crisp.src = 'lightcrispbtn.jpg';
+  light_crisp.src = '../img/buttons/lightcrispbtn.jpg';
 
   var deep_malty = document.createElement('input');
   deep_malty.type = 'image';
-  deep_malty.src = 'deepmaltybtn.jpg';
+  deep_malty.src = '../img/buttons/deepmaltybtn.jpg';
 
   var light_hoppy = document.createElement('input');
   light_hoppy.type = 'image';
-  light_hoppy.src = 'lighthoppybtn.jpg';
+  light_hoppy.src = '../img/buttons/lighthoppybtn.jpg';
 
   lagerFlavorType.appendChild(light_crisp);
   lagerFlavorType.appendChild(deep_malty);
@@ -338,11 +338,11 @@ var renderDark = function(){
 
   var coffee = document.createElement('input');
   coffee.type = 'image';
-  coffee.src = 'coffeebtn.jpg';
+  coffee.src = '../img/buttons/coffeestoutbtn.jpg';
 
   var chocolate = document.createElement('input');
   chocolate.type = 'image';
-  chocolate.src = 'chocolatebtn.jpg';
+  chocolate.src = '../img/buttons/chocolateporterbtn.jpg';
 
   darkFlavorType.appendChild(coffee);
   darkFlavorType.appendChild(chocolate);
