@@ -3,6 +3,12 @@
   margin-left: 31%;
   padding: 45px;
 }
+#HomeButton {
+  font-size: 28px;
+  position: absolute;
+  margin-top: 42%;
+  margin-left: 90%;
+}
 
 #AboutButton {
   font-size: 28px;
@@ -46,27 +52,36 @@
     z-index: -2;
     font-size: 18px;
 }
-
-#button1 {
+/* display: contents after button is pressed */
+#ale {
+  display: none;
   position: absolute;
     left: 620px;
     top: 455px;
     width: 120px;
     z-index: +1;
 }
-
-#button2 {
+/* display: contents after button is pressed */
+#lager {
+  display:none;
   position: absolute;
     left: 620px;
     top: 535px;
     width: 120px;
     z-index: +1;
 }
-
-#button3 {
+/* display: contents after button is pressed */
+#dark {
+  display:none; 
   position: absolute;
     left: 620px;
     top: 615px;
     width: 120px;
     z-index: +1;
+}
+
+/* ABOUT HTML CSS */
+
+#LindsayIMG {
+  width: 200px;;
 }
