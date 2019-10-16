@@ -4,7 +4,14 @@
   font-size:128px;
 }
 
-#Lindsay {
+#David {
  position: absolute;
- width: 50%; 
+ width: 300px;
+margin-left: 255px;
+}
+
+.DavidIMG {
+  position: absolute;
+ width: 300px;
+margin-left: 255px;
 }
