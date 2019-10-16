@@ -170,17 +170,12 @@ ResultsHistory.prototype.packageForChart = function(){
   });
   return data;
 };
-// ************************************************************************
-//
-//   Entry Point
-//
-// ************************************************************************
 
-!function(){
-  var factory = new BeerFactory();
-  factory.createBeerList();
-}();
-
+// **************************************************************************
+//
+//  Event and HTML rendering functions
+//
+// **************************************************************************
 var beerTypeSelection = function(event){
   var eventSRC = event.target
   var id = eventSRC.id;
@@ -269,6 +264,17 @@ var beerTypeSelection = function(event){
   
 
   };
+
+  // ************************************************************************
+//
+//   Entry Point
+//
+// **************************************************************************
+
+!function(){
+  var factory = new BeerFactory();
+  factory.createBeerList();
+}();
 
 
 
