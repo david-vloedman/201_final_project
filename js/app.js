@@ -179,8 +179,31 @@ ResultsHistory.prototype.packageForChart = function(){
 //
 // **************************************************************************
 
-var renderSetup = function(){
-  document.createElement();
+var renderSetup = function(user){
+  removeChildren();
+  var opt1 = document.createElement('input');
+  var opt2 = document.createElement('input');
+  var opt3 = document.createElement('input');
+  opt1.type = 'image';
+  opt2.type = 'image';
+  opt3.type = 'image';
+  opt1.src = '../img/buttons/ale2.jpg';
+  opt2.src = '../img/buttons/pilslager.jpg';
+  opt3.src = '../img/buttons/stout.jpg';
+  opt1.id = 'ale';
+  opt2.id = 'lager';
+  opt3.id = 'dark';
+
+  var qTarget = document.getElementById('instructions');
+  var instructions = document.createElement('h2');
+  instructions.innerHTML = `${user.name}, pick a type of beer:`;
+  qTarget.appendChild(instructions);
+
+  var target = document.getElementById('responses');
+  target.appendChild(opt1);
+  target.appendChild(opt2);
+  target.appendChild(opt3);
+
 };
 
 var promptUser = function(){
