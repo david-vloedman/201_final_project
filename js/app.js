@@ -170,107 +170,17 @@ ResultsHistory.prototype.packageForChart = function(){
   });
   return data;
 };
-// ************************************************************************
-//
-//   Entry Point
-//
-// ************************************************************************
 
-!function(){
-  var factory = new BeerFactory();
-  factory.createBeerList();
-}();
+// **************************************************************************
+//
+//  Event and HTML rendering functions
+//
+// **************************************************************************
 
 var beerTypeSelection = function(event){
   var eventSRC = event.target
   var id = eventSRC.id;
 
-      if (id === 'ale'){
-        renderAle();
-      }
-      if (id === 'lager'){
-        renderLager();
-      }
-      if (id === 'dark'){
-        renderDark();
-      }
-    }
-
-    function removeChildren(){
-      var responseElement = document.getElementById('responses');
-      while(responseElement.hasChildNodes()){
-        responseElement.removeChild(responseElement.lastChild)
-      }
-    }
-
-    renderAle = function(){
-      removeChildren();
-      
-      var aleFlavorType = document.getElementById('responses');
-
-      var warm_malty = document.createElement('input');
-      warm_malty.type = 'image';
-      warm_malty.src = 'warmmaltybtn.jpg';
-
-      var crisp_light = document.createElement('input');
-      crisp_light.type = 'image';
-      crisp_light.src = 'crisplightbtn.jpg';
-
-      var hoppy = document.createElement('input');
-      hoppy.type = 'image';
-      hoppy.src = 'hoppybtn.jpg';
-
-      var sour = document.createElement('input');
-      sour.type = 'image';
-      sour.src = 'sourbtn.jpg';
-
-      aleFlavorType.appendChild(warm_malty);
-      aleFlavorType.appendChild(crisp_light);
-      aleFlavorType.appendChild(hoppy);
-      aleFlavorType.appendChild(sour);
-    };
-
-    renderLager = function(){
-      removeChildren();
-      var lagerFlavorType = document.getElementById('responses');
-      var  light_crisp = document.createElement('input');
-      light_crisp.type = 'image';
-      light_crisp.src = 'lightcrispbtn.jpg';
-
-      var deep_malty = document.createElement('input');
-      deep_malty.type = 'image';
-      deep_malty.src = 'deepmaltybtn.jpg';
-
-      var light_hoppy = document.createElement('input');
-      light_hoppy.type = 'image';
-      light_hoppy.src = 'lighthoppybtn.jpg';
-
-      lagerFlavorType.appendChild(light_crisp);
-      lagerFlavorType.appendChild(deep_malty);
-      lagerFlavorType.appendChild(light_hoppy);
-    };
-
-    renderDark = function(){
-      removeChildren();
-
-      var darkFlavorType = document.getElementById('responses');
-      
-      var coffee = document.createElement('input');
-      coffee.type = 'image';
-      coffee.src = 'coffeebtn.jpg';
-
-      var chocolate = document.createElement('input');
-      chocolate.type = 'image';
-      chocolate.src = 'chocolatebtn.jpg';
-
-      darkFlavorType.appendChild(coffee);
-      darkFlavorType.appendChild(chocolate);
-    }
-  };
-
-var beerTypeSelection = function(event){
-  var eventSRC = event.target
-  var id = eventSRC.id;
 
       if (id === 'ale'){
         renderAle();
@@ -353,4 +263,16 @@ var beerTypeSelection = function(event){
         getResults = function(){
           removeChildren();
         }  
+
+
+  // ************************************************************************
+//
+//   Entry Point
+//
+// **************************************************************************
+
+!function(){
+  var factory = new BeerFactory();
+  factory.createBeerList();
+}();
         
