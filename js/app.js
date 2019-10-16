@@ -247,8 +247,8 @@ var userDataSubmit = function(event){
   var age = document.getElementById('age').value;
   var user = new User(name, age);  
   
-  if(!user.isLegal()) displayTooYoung(user);
-  renderSetup(user);
+  !user.isLegal() ? displayTooYoung(user) : renderSetup(user);
+
   
 };
 
