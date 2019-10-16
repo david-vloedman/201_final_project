@@ -81,7 +81,7 @@ var BeerFactory = function() {
   var beerBrands = ['Boneyard', 'Goodlife', 'Deschutes Brewery', 'Sunriver Brewing', '10Barrel', 'Bend Brewing Company', 'Crux'];
 
   BeerFactory.prototype.createBeerList = function(){
-    new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
+    // new Beer(beerBrands[0], 'Rojo Diablo Amber Ale', beerType[0],flavorAle[0], diabloRojo, '/img/beers/diablorojo.jpg');
     new Beer(beerBrands[1], 'Sweet As Pacific Pale', beerType[0],flavorAle[1], '/img/beers/sap.jpg');
     new Beer(beerBrands[3], 'Vicious Mosquito', beerType[0], flavorAle[2], viciousMosq, '/img/beers/viciousmosquito.jpg');
     new Beer(beerBrands[5], 'ChingChing Sour', beerType[0], flavorAle[3], chingChingSour, '/img/beers/chingsour.jpg');
@@ -179,10 +179,70 @@ ResultsHistory.prototype.packageForChart = function(){
 //
 // **************************************************************************
 
+var renderSetup = function(){
+  document.createElement();
+};
+
+var promptUser = function(){
+  var userForm = document.createElement('form');
+  var name = document.createElement('input');
+  var age = document.createElement('input');
+  var submit = document.createElement('input');
+  var nameLbl = document.createElement('label');
+  var ageLbl = document.createElement('label');  
+
+  name.type = 'text';
+  name.name = 'name';
+  name.id = 'name';
+  nameLbl.htmlFor = 'name';
+  nameLbl.innerHTML = 'Name: ';
+
+  age.type = 'number';
+  age.name = 'age';
+  age.id = 'age';
+  ageLbl.htmlFor = 'age';  
+  ageLbl.innerHTML = 'Age: ';
+  
+  submit.type = 'submit';
+  submit.value = 'Submit';
+
+  userForm.id = 'userInfo';
+  userForm.appendChild(nameLbl);
+  userForm.appendChild(name);
+  userForm.appendChild(ageLbl);
+  userForm.appendChild(age);
+  userForm.appendChild(submit);
+
+  var formTarget = document.getElementById('responses');
+  formTarget.appendChild(userForm);
+    
+};
+
+var userDataSubmit = function(event){
+  event.preventDefault();
+  var name = document.getElementById('name').value;
+  var age = document.getElementById('age').value;
+  var user = new User(name, age);  
+  
+  if(!user.isLegal()) displayTooYoung(user);
+  renderSetup(user);
+  
+};
+
+var displayTooYoung = function(user){
+  removeChildren();
+  var msg = document.createElement('p');
+  var diff = user.legalAge - user.age;
+  msg.innerHTML = `Sorry, ${user.name} you're not allow to drink. Come back in ${diff} years`;
+
+  var target = document.getElementById('responses');
+  target.appendChild(msg);
+};
+
+
 var beerTypeSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
-
 
   if (id === 'ale'){
     renderAle();
@@ -306,10 +366,30 @@ var getResults = function(){
 //
 //   Entry Point
 //
-// **************************************************************************
+// ************************************************************************
 
-!function(){
+!function(){  
   var factory = new BeerFactory();
-  factory.createBeerList();
+  factory.createBeerList();  
+  promptUser();
 }();
+
+addEventListener('click', beerTypeSelection);
+
+addEventListener('click', beerFlavorSelection);
+
+addEventListener('submit', userDataSubmit);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
