@@ -273,17 +273,6 @@ var matchBeerList = function (){
   beers.forEach(beer => console.log(beer.flav_profile));
 };
 
-// pass in beer match result to be saved
-var saveBeerMatch = function(){
-  var toStore = JSON.stringify(beerMatch);
-  localStorage.setItem('beerMatch', toStore);
-};
-
-// returns stored beer match
-var getBeerMatch = function(){
-  return JSON.parse(localStorage.getItem('beerMatch'));
-};
-
 //sends user to results page using the pathname
 var redirectToResultsPage = function(){
   window.location.pathname = '/pages/results.html';
@@ -326,9 +315,9 @@ var beerFlavorSelection = function(event){
 var getResults = function(){
   removeChildren();
   matchBeerList();
-  saveBeerMatch();
+  saveData();
   redirectToResultsPage();
-  getBeerMatch();
+  getData();
 };
 
 // ************************************************************************
