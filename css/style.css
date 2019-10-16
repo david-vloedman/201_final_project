@@ -6,32 +6,32 @@
 #HomeButton {
   font-size: 48px;
   position: absolute;
-  margin-top: 1780px;
-  margin-left: 88%;
+  margin-top: 2000px;
+  margin-left: 39%;
   color: rgb(105, 105, 243);
 }
 
 #ResultsHomeButton {
   font-size: 48px;
   position: absolute;
-  margin-top: 620px;
-  margin-left: 88%;
+  margin-top: 780px;
+  margin-left: 37.5%;
   color: rgb(105, 105, 243);
 }
 
 #AboutButton {
   font-size: 48px;  
   position: absolute;
-  margin-top: 40%;
-  margin-left: 88%;
+  margin-top: 52%;
+  margin-left: 42%;
   color: rgb(105, 105, 243);
 }
 
 #ResultsButton {
   font-size: 48px;
   position: absolute;
-  margin-top: 43%;
-  margin-left: 90%;
+  margin-top: 49%;
+  margin-left: 43.4%;
   color: rgb(105, 105, 243);
 }
 
@@ -281,7 +281,7 @@
   #MasonIMG {
     position: absolute;
     left: 355px;
-    top: 1545px;
+    top: 1565px;
     width: 260px;
     z-index: +1;
     margin-bottom:0;
