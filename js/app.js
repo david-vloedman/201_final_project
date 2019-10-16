@@ -201,6 +201,9 @@ function removeChildren(){
     responseElement.removeChild(responseElement.lastChild);
   }
 }
+function getResults(){
+
+}
 
 var renderAle = function(){
   removeChildren();
@@ -301,6 +304,19 @@ var getResults = function(){
   removeChildren();
 };
 
+var beerMatchLocalStorage = {
+
+  // pass in beer match result to be saved
+  saveBeerMatch: function(beerMatch){
+    var toStore = JSON.stringify(beerMatch);
+    localStorage.setItem('beerMatch', toStore);
+  },
+
+  // returns stored beer match
+  getUser: function(){
+    return JSON.parse(localStorage.getItem('beerMatch'));
+  },
+};
 
 // ************************************************************************
 //
