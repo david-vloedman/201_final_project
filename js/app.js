@@ -302,6 +302,7 @@ var beerFlavorSelection = function(event){
 
 var getResults = function(){
   removeChildren();
+  beerMatchLocalStorage
 };
 
 var beerMatchLocalStorage = {
@@ -313,7 +314,7 @@ var beerMatchLocalStorage = {
   },
 
   // returns stored beer match
-  getUser: function(){
+  getBeerMatch: function(){
     return JSON.parse(localStorage.getItem('beerMatch'));
   },
 };
