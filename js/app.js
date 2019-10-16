@@ -266,9 +266,91 @@ var beerTypeSelection = function(event){
       darkFlavorType.appendChild(coffee);
       darkFlavorType.appendChild(chocolate);
     }
-  
-
   };
 
+var beerTypeSelection = function(event){
+  var eventSRC = event.target
+  var id = eventSRC.id;
 
+      if (id === 'ale'){
+        renderAle();
+      }
+      if (id === 'lager'){
+        renderLager();
+      }
+      if (id === 'dark'){
+        renderDark();
+      }
+    }
 
+    function removeChildren(){
+      var responseElement = document.getElementById('responses');
+      while(responseElement.hasChildNodes()){
+        responseElement.removeChild(responseElement.lastChild)
+      }
+    }
+
+    renderAle = function(){
+      removeChildren();
+      
+      var aleFlavorType = document.getElementById('responses');
+
+      var warm_malty = document.createElement('input');
+      warm_malty.type = 'image';
+      warm_malty.src = 'warmmaltybtn.jpg';
+
+      var crisp_light = document.createElement('input');
+      crisp_light.type = 'image';
+      crisp_light.src = 'crisplightbtn.jpg';
+
+      var hoppy = document.createElement('input');
+      hoppy.type = 'image';
+      hoppy.src = 'hoppybtn.jpg';
+
+      var sour = document.createElement('input');
+      sour.type = 'image';
+      sour.src = 'sourbtn.jpg';
+
+      aleFlavorType.appendChild(warm_malty);
+      aleFlavorType.appendChild(crisp_light);
+      aleFlavorType.appendChild(hoppy);
+      aleFlavorType.appendChild(sour);
+    };
+
+    var beerFlavorSelection = function(event){
+      var eventSRC = event.target
+      var id = eventSRC.id;
+    
+          if (id === 'warm_malty'){
+            getResults();
+          }
+          if (id === 'crisp_light'){
+            getResults();
+          }
+          if (id === 'hoppy'){
+            getResults();
+          }
+          if (id === 'sour'){
+            getResults();
+          }
+          if (id === 'light_crisp'){
+            getResults();
+          }
+          if (id === 'deep_malty'){
+            getResults();
+          }
+          if (id === 'light_hoppy'){
+            getResults();
+          }
+          if (id === 'coffee'){
+            getResults();
+          }
+          if (id === 'chocolate'){
+            getResults();
+          }
+        }
+    
+        getResults = function(){
+          removeChildren();
+        }  
+        
