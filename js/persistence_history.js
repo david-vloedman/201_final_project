@@ -5,27 +5,29 @@
 // ************************************************************************
 
 
-function ResultsHistory(){
+function ResultsHistory(beers){
   this.historyData = persistenceManager.getHistoric();
-  if(this.historyData === null) this.fabricateHistory();
+  if(this.historyData === null) this.fabricateHistory(beers);
+
 }
 
 ResultsHistory.prototype.addBeer = function(beer){
   this.historyData.push(beer);
 };
 
-ResultsHistory.prototype.fabricateHistory = function(){
+ResultsHistory.prototype.fabricateHistory = function(beers){
   var randomIndices = [];
-  for(var i = 0; i < 8; i++){
+  for(var i = 0; i < beers.length; i++){    
     randomIndices.push(Math.floor(Math.random() * beers.length));
   }
 
   var history = [];
-
+  console.log('index', randomIndices);
   randomIndices.forEach(index => {
     history.push(beers[index]);
-  });
+  });  
   this.historyData = history;
+  persistenceManager.storeHistoric(this.historyData);
 };
 // ************************************************************************
 //  The package for chart function puts the history in data set
