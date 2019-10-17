@@ -1,3 +1,7 @@
+body {
+background-image: url(/img/background/woodbackground.jpg);
+}
+
 #indexH1 {
   font-size: 58px;
   margin-left: 35%;
@@ -76,6 +80,7 @@
   font-size:28;
   margin-left: 340px;
 }
+
 /* display: contents after button is pressed */
 #ale {
   
