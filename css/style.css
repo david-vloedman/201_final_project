@@ -73,8 +73,8 @@
 }
 
 #responses>p {
-  font-size:48;
-  margin-left: 210px;
+  font-size:28;
+  margin-left: 340px;
 }
 /* display: contents after button is pressed */
 #ale {
@@ -237,6 +237,7 @@
   margin-top:0px;
   margin-left:20%;
   background-color: white
+  
 }
 
 #aboutID {
