@@ -23,7 +23,8 @@ var renderResults = function(){
 
 var createCanvas = function(){
   var canvas = document.createElement('canvas');
-}
+
+};
 
 
 

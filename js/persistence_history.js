@@ -17,7 +17,7 @@ ResultsHistory.prototype.addBeer = function(beer){
 
 ResultsHistory.prototype.fabricateHistory = function(beers){
   var randomIndices = [];
-  for(var i = 0; i < beers.length; i++){    
+  for(var i = 0; i < beers.length; i++){
     randomIndices.push(Math.floor(Math.random() * beers.length));
   }
 
@@ -25,7 +25,7 @@ ResultsHistory.prototype.fabricateHistory = function(beers){
   console.log('index', randomIndices);
   randomIndices.forEach(index => {
     history.push(beers[index]);
-  });  
+  });
   this.historyData = history;
   persistenceManager.storeHistoric(this.historyData);
 };
