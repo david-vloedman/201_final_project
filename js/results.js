@@ -64,6 +64,13 @@ var createDataSet = function(){
           'rgba(46, 38, 97, 1)'       
         ],
       }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontSize: 20,
+        }
+      }
     }
   };
 

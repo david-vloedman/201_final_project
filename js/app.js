@@ -264,6 +264,14 @@ var renderAle = function(){
   aleFlavorType.appendChild(hoppy);
   aleFlavorType.appendChild(sour);
 };
+
+var secondInstructions = function(){
+  var inst = document.getElementById('instructions');
+  removeChildren(inst);
+  var content = document.createElement('h2');
+  content.innerHTML = 'Pick a flavor profile...';
+  inst.appendChild(content);
+};
 var renderLager = function(){
   removeChildren();
   var lagerFlavorType = document.getElementById('responses');
@@ -321,7 +329,6 @@ var renderDark = function(){
   chocolate.id = 'chocolate';
   chocolate.type = 'image';
   chocolate.src = '../img/buttons/chocolateporterbtn.jpg';
-
   chocolate.id = 'chocolate';
 
 
@@ -339,6 +346,7 @@ var directToResults = function(){
 var beerFlavorSelection = function(event){
   var eventSRC = event.target;
   var id = eventSRC.id;
+
   var suggestion;
   beers.forEach(beer => {
     if(beer.flav_profile === id) suggestion = beer;
