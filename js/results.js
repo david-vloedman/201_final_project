@@ -1,9 +1,9 @@
 'using strict';
+var chartPackage;
 
 
 var renderResults = function(){
   var children = [];
-
   var result = persistenceManager.getData('beer');
   var target = document.getElementById('results');
   children.push(document.createElement('img'));
@@ -17,20 +17,79 @@ var renderResults = function(){
   children.push(document.createElement('p'));
   children[3].id = 'desc';
   children[3].innerHTML = result.description;
-
   children.forEach(child => { target.appendChild(child); });
 };
 
-var createCanvas = function(){
-  var canvas = document.createElement('canvas');
+
+//
+//  CHART
+//
+//
+//
+var getDataSet = function(){
+  var data = [];
+  chartPackage.forEach(datum => {
+    data.push(datum[1]);
+  });
+  return data;
+};
+
+var getLabels = function(){
+  var labels = [];
+  chartPackage.forEach(label => {
+    labels.push(label[0]);
+  });
+  return labels;
+};
+
+
+
+var createDataSet = function(){
+  var params = {
+    type: 'doughnut',
+    data: {
+      labels: getLabels(),
+      datasets:[{
+        label: 'Previous Suggestions',
+        data: getDataSet(),
+        backgroundColor: [
+          'rgba(243, 152, 0, 1)',
+          'rgba(199, 124, 0, 1)',
+          'rgba(0, 128, 100, 1)',
+          'rgba(79, 57, 2, 1)',
+          'rgba(45, 33, 3, 1)',
+          'rgba(120, 46, 0, 1)',
+          'rgba(222, 85, 0, 1)',
+          'rgba(0, 207, 161, 1)',
+          'rgba(46, 38, 97, 1)'       
+        ],
+      }]
+    }
+  };
+
+
+  return params;
 
 };
+
+
+
+var createChart = function(){
+  var canvas = document.createElement('canvas');  
+  var chart = new Chart(canvas, createDataSet());
+  var target = document.getElementById('results');
+  target.appendChild(canvas);
+};
+
 
 
 
 !function(){
   beers = persistenceManager.getData('beers');
-  var resultHis = new ResultsHistory(beers);
+  chartPackage = new ResultsHistory(beers).packageForChart();
+ 
+
   renderResults();
+  createChart();
 }();
 
