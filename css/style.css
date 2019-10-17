@@ -1,38 +1,27 @@
 #indexH1 {
   font-size: 58px;
-  margin-left: 35%;
-  padding-top: 40px;
+  margin-left: 31%;
+  padding: 45px;
 }
 #HomeButton {
-  font-size: 48px;
+  font-size: 28px;
   position: absolute;
-  margin-top: 2000px;
-  margin-left: 39%;
-  color: rgb(105, 105, 243);
-}
-
-#ResultsHomeButton {
-  font-size: 48px;
-  position: absolute;
-  margin-top: 990px;
-  margin-left: 37.5%;
-  color: rgb(105, 105, 243);
+  margin-top: 42%;
+  margin-left: 90%;
 }
 
 #AboutButton {
-  font-size: 48px;  
+  font-size: 28px;
   position: absolute;
-  margin-top: 52%;
-  margin-left: 42%;
-  color: rgb(105, 105, 243);
+  margin-top: 42%;
+  margin-left: 90%;
 }
 
 #ResultsButton {
-  font-size: 48px;
+  font-size: 28px;
   position: absolute;
-  margin-top: 49%;
-  margin-left: 43.4%;
-  color: rgb(105, 105, 243);
+  margin-top: 40%;
+  margin-left: 90%;
 }
 
 #userInfo {
@@ -40,9 +29,6 @@
   margin-top: 100;  
 }
 
-#name {
-  margin-right: 13px;
-}
 #instructions {
   margin-top:25px;
   margin-left:36%;
@@ -73,8 +59,8 @@
 }
 
 #responses>p {
-  font-size:28;
-  margin-left: 340px;
+  font-size:48;
+  margin-left: 210px;
 }
 /* display: contents after button is pressed */
 #ale {
@@ -83,8 +69,7 @@
     left: 620px;
     top: 255px;
     width: 220px;
-    z-index: +1;  
- 
+    z-index: +1;
 }
 /* display: contents after button is pressed */
 #lager {
@@ -94,7 +79,6 @@
     top: 405px;
     width: 220px;
     z-index: +1;
-    
 }
 
 #dark {
@@ -103,7 +87,6 @@
     top: 555px;
     width: 220px;
     z-index: +1;
-    
 
   }
   /* display: contents after button is pressed */
@@ -189,25 +172,7 @@
     z-index: +1;
 }
 
-/*     ALL ABOUT RESULTS PAGE */ 
 
-#results>img {
-  margin-left: 36%;
-  width:25%;
-}
-
-#user>p {
-  margin-left: 39%;
-  margin-bottom:25px;
-  font-size: 18px;
-}
-
-#results>p {
-  margin-left: 440px;
-  margin-top: 35px;
-  font-size: 18px;
-  width:42%;
-}
 
 
 
@@ -219,159 +184,31 @@
   position: fixed; 
   left: 0px; 
   top: 0px; 
-  padding: 0px;
-  z-index: -2; 
+  z-index: -1; 
 }
 .stretch {
   width:100%;
   height:100%;
 }
-#foregroundResult { 
-  position: absolute; 
-  z-index:-2;
-  width: 55%;
-  height:105%;
-  margin-top:0px;
-  margin-left:20%;
-  background-color: white
-}
 
-#foregroundIndex { 
-  position: absolute; 
-  z-index:-2;
-  width: 55%;
-  height:100%;
-  margin-top:0px;
-  margin-left:20%;
-  background-color: white
-}
-
-
-#foregroundAbout { 
-  position: absolute; 
-  z-index:-2;
-  width: 55%;
-  height:255%;
-  margin-top:0px;
-  margin-left:20%;
-  background-color: white
-  
-}
-
-#aboutID {
-  font-size: 78px;
-  margin-left: 25%;
-  margin-bottom:10px;
-  padding-top: 50px;
-  height: 20%;
-  text-align: bottom;
-  
-  
-}
 /* Team Information */
 
 #LindsayIMG {
   position: absolute;
-  left: 355px;
-  top: 305px;
-  width: 260px;
-  z-index: +1;
-  border-radius: 50%;
+    left: 125px;
+    top: 245px;
+    width: 260px;
+    z-index: +1;
+}
+
+#Lindsay {
+  margin-left: 55px;
 }
 
 #DavidIMG {
   position: absolute;
-    left: 355px;
-    top: 725px;
+    left: 125px;
+    top: 2145px;
     width: 260px;
     z-index: +1;
-    border-radius: 50%;
-  }
-
-  #NatalieIMG {
-    position: absolute;
-      left: 355px;
-      top: 1115px;
-      width: 260px;
-      z-index: +1;
-      border-radius: 50%;
-  }
-  
-  #MasonIMG {
-    position: absolute;
-    left: 355px;
-    top: 1565px;
-    width: 260px;
-    z-index: +1;
-    margin-bottom:0;
-    border-radius: 50%;
-  }
-  
-  #Lindsay {
-    margin-left: 630px;
-    margin-top: 180px;
-    width: 30%;
-    font-size: 24px;
-    color:rgb(130, 28, 170);
-    font-style:bold;
- 
-  }  
-
-  #Lindsay>h2 {
-    margin-left: 75px;
-    margin-bottom: 25px;
-  }
-  
-  #David {
-    margin-left: 630px;
-    margin-top: 270px;
-    font-size: 24px;
-    width: 30%; 
-    color:rgb(117, 7, 128);
-    font-style:bold;
-      
-  }  
-
-  #David>h2 {
-    margin-left: 75px;
-    margin-bottom: 25px;
-  }
-
-#Natalie {
-  margin-left: 630px;
-  margin-top: 175px;
-  width: 28%;
-  font-size: 24px;
-  color: purple;
-  font-style:bold;
-  
-}  
-
-#Natalie>h2 {
-  margin-left: 75px;
-  margin-bottom: 25px;
-  
 }
-
-#Mason {
-  margin-left: 630px;
-  margin-top: 200px;
-  margin-bottom:100px;
-  font-size: 24px;
-  width: 28%;
-  color:purple;
-  font-style:bold;
-}  
-
-#Mason>h2 {
-  margin-left: 75px;
-  margin-bottom: 25px;
-}
-
-
-
-
-
-
-
-

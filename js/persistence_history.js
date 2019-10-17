@@ -79,3 +79,4 @@ var persistenceManager = {
     return JSON.parse(localStorage.getItem('history'));
   }
 };
+

@@ -32,3 +32,4 @@ var createCanvas = function(){
   var resultHis = new ResultsHistory(beers);
   renderResults();
 }();
+
